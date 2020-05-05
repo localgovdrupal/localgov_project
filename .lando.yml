@@ -1,0 +1,55 @@
+name: localgov
+recipe: drupal8
+config:
+  xdebug: false
+  webroot: web
+  php: '7.2'
+proxy:
+  mailhog:
+    - mail.localgov.lndo.site
+  adminer:
+    - adminer.localgov.lndo.site
+services:
+  appserver:
+    overrides:
+      environment:
+        DRUSH_OPTIONS_ROOT: '/app/web'
+        DRUSH_OPTIONS_URI: 'http://localgov.lndo.site'
+  database:
+    creds:
+      user: database
+      password: database
+      database: database
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+    portforward: true
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: '/bin/s6-svscan /etc/services.d'
+    portforward: true
+tooling:
+  behat:
+    service: appserver
+    cmd: '/app/bin/behat'
+  phix:
+    service: appserver
+    cmd: '/app/bin/phpcbf --standard=vendor/drupal/coder/coder_sniffer/Drupal,vendor/drupal/coder/coder_sniffer/DrupalPractice --extensions=php,module,inc --report=full'
+  drush:
+    service: appserver
+    cmd: '/app/bin/drush'
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for apache.
+    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for apache.
+    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    user: root
+
+
