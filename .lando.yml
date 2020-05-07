@@ -32,15 +32,18 @@ services:
       command: '/bin/s6-svscan /etc/services.d'
     portforward: true
 tooling:
-  behat:
-    service: appserver
-    cmd: '/app/bin/behat'
-  phix:
-    service: appserver
-    cmd: '/app/bin/phpcbf --standard=vendor/drupal/coder/coder_sniffer/Drupal,vendor/drupal/coder/coder_sniffer/DrupalPractice --extensions=php,module,inc --report=full'
   drush:
     service: appserver
     cmd: '/app/bin/drush'
+  phpcs:
+    service: appserver
+    cmd: '/app/bin/phpcs'
+  phix:
+    service: appserver
+    cmd: '/app/bin/phpcbf'
+  phpunit:
+    service: appserver
+    cmd: '/app/bin/phpunit --testdox'
   xdebug-on:
     service: appserver
     description: Enable xdebug for apache.
@@ -51,5 +54,3 @@ tooling:
     description: Disable xdebug for apache.
     cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
     user: root
-
-
