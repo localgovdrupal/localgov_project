@@ -18,6 +18,7 @@
         "localgovdrupal/localgov": "dev-master"
     },
     "require-dev": {
+        "drupal/coder": "8.3.8",
         "drupal/core-dev": "^8.8"
     },
     "conflict": {
