@@ -18,7 +18,9 @@
         "localgovdrupal/localgov": "dev-master"
     },
     "require-dev": {
-        "drupal/core-dev": "^8.8"
+        "drupal/core-dev": "^8.8",
+        "mglaman/phpstan-drupal": "^0.12.3",
+        "phpstan/phpstan-deprecation-rules": "^0.12.2"
     },
     "conflict": {
         "drupal/drupal": "*"
