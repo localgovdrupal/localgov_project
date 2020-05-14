@@ -16,6 +16,7 @@
 /web/sites/*/files/
 
 # Ignore scaffold files
+/.editorconfig
 /.gitattributes
 /web/.csslintrc
 /web/.eslintignore
@@ -40,11 +41,12 @@
 /web/update.php
 /web/web.config
 
-# Ignore SimpleTest multi-site environment.
+# Ignore SimpleTest multi-site environment
 /web/sites/simpletest
 
 # Ignore IDE files
-/.idea/
+.idea/
+.vscode/
 
 # Ignore .env files as they are personal
 /.env
