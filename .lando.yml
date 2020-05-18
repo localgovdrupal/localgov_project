@@ -15,6 +15,7 @@ services:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/web'
         DRUSH_OPTIONS_URI: 'http://localgov.lndo.site'
+        SIMPLETEST_DB: 'mysql://database:database@database/database'
   database:
     creds:
       user: database
