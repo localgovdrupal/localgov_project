@@ -12,6 +12,8 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
+        "drupal/config_inspector": "^1.1",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
@@ -33,6 +35,7 @@
         "bin-dir": "bin/"
     },
     "extra": {
+        "enable-patching": true,
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
@@ -73,6 +76,14 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "patches": {
+            "drupal/office_hours": {
+                "Fix schema": "https://www.drupal.org/files/issues/2019-08-02/3072276-2.patch"
+            },
+            "drupal/geolocation": {
+                "Fix schema": "https://www.drupal.org/files/issues/2020-05-21/geolocation-google-maps-schema-update-3138668-2.patch"
+            }
         }
 
     }
