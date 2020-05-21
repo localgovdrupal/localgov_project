@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ruleset name="localovdrupal">
+<ruleset name="localgovdrupal">
   <description>PHP CodeSniffer configuration for LocalGovDrupal.</description>
 
   <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
   <config name="drupal_core_version" value="8"/>
 
-  <file>web/profiles/contrib/localgov/</file>
   <file>web/modules/contrib/</file>
-  <!-- Exclude modules not starting with localgov_ -->
+  <file>web/profiles/contrib/localgov/</file>
+  <file>web/themes/contrib/localgov_theme/</file>
+  <!-- Exclude 3rd party code -->
   <exclude-pattern>web\/modules\/contrib\/(?!localgov_.*)</exclude-pattern>
+  <exclude-pattern>web\/themes\/contrib\/localgov_theme\/node_modules</exclude-pattern>
 
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
   <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice"/>

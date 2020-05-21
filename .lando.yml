@@ -35,7 +35,7 @@ services:
 tooling:
   deprecated:
     service: appserver
-    cmd: 'bash -c "/app/bin/phpstan analyse -c /app/phpstan.neon /app/web/profiles/contrib/localgov/ /app/web/modules/contrib/localgov_*"'
+    cmd: 'bash -c "/app/bin/phpstan analyse -c /app/phpstan.neon /app/web/profiles/contrib/localgov/ /app/web/modules/contrib/localgov_*/  /app/web/themes/contrib/localgov_theme/"'
   drush:
     service: appserver
     cmd: '/app/bin/drush'
