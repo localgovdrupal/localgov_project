@@ -12,6 +12,7 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
@@ -19,6 +20,7 @@
     },
     "require-dev": {
         "drupal/coder": "8.3.8",
+        "drupal/config_inspector": "^1.1",
         "drupal/core-dev": "^8.8",
         "mglaman/phpstan-drupal": "^0.12.3",
         "phpstan/phpstan-deprecation-rules": "^0.12.2"
@@ -33,6 +35,7 @@
         "bin-dir": "bin/"
     },
     "extra": {
+        "enable-patching": true,
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
