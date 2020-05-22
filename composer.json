@@ -17,7 +17,7 @@
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
-        "localgovdrupal/localgov": "dev-feature/32-core-paragraphs"
+        "localgovdrupal/localgov": "dev-master"
     },
     "require-dev": {
         "drupal/coder": "8.3.8",
