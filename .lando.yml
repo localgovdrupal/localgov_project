@@ -14,7 +14,7 @@ services:
     overrides:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/web'
-        DRUSH_OPTIONS_URI: 'http://localgov.lndo.site'
+        DRUSH_OPTIONS_URI: 'https://localgov.lndo.site'
         SIMPLETEST_DB: 'mysql://database:database@database/database'
         MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", { "chromeOptions": { "w3c": false } }, "http://chromedriver:4444/wd/hub"]'
   database:
