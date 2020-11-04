@@ -11,18 +11,18 @@
         }
     ],
     "require": {
-        "composer/installers": "^1.2",
+        "composer/installers": "^1.9",
         "cweagans/composer-patches": "^1.6",
-        "drupal/core-composer-scaffold": "^8.8",
-        "drupal/core-project-message": "^8.8",
-        "drupal/core-recommended": "^8.8",
+        "drupal/core-composer-scaffold": "^8.9",
+        "drupal/core-project-message": "^8.9",
+        "drupal/core-recommended": "^8.9",
         "localgovdrupal/localgov": "^1.0@alpha"
     },
     "require-dev": {
         "brianium/paratest": "^4.0.0",
         "drupal/coder": "8.3.8",
         "drupal/config_inspector": "^1.1",
-        "drupal/core-dev": "^8.8",
+        "drupal/core-dev": "^8.9",
         "mglaman/phpstan-drupal": "^0.12.3",
         "phpstan/phpstan": "0.12.42",
         "phpstan/phpstan-deprecation-rules": "^0.12.2",
