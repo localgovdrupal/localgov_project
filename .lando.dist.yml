@@ -3,7 +3,7 @@ recipe: drupal8
 config:
   xdebug: false
   webroot: web
-  php: '7.2'
+  php: '7.4'
 proxy:
   mailhog:
     - mail.localgov.lndo.site
