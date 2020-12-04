@@ -28,11 +28,11 @@ jobs:
 
       - name: Extract Git branch name outside of a pull request
         if: github.event_name != 'pull_request'
-        run: echo "::set-env name=GIT_BRANCH::${GITHUB_REF#refs/heads/}"
+        run: echo "GIT_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
 
       - name: Extract Git branch name from a pull request
         if: github.event_name == 'pull_request'
-        run: echo "::set-env name=GIT_BRANCH::${GITHUB_HEAD_REF}"
+        run: echo "GIT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
 
       - name: Grab test target
         run: composer --working-dir=html require ${{ github.repository }}:"dev-${GIT_BRANCH} as 1.0.x-dev"
