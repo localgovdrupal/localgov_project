@@ -59,3 +59,6 @@
 *.sql.gz
 *.mysql
 *.mysql.gz
+
+# Ignore Lando overrides
+.lando.local.yml
