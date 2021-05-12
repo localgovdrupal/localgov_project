@@ -16,7 +16,7 @@
         "drupal/core-composer-scaffold": "^8.9",
         "drupal/core-project-message": "^8.9",
         "drupal/core-recommended": "^8.9",
-        "localgovdrupal/localgov": "^1.0@alpha"
+        "localgovdrupal/localgov": "^1.0"
     },
     "require-dev": {
         "brianium/paratest": "^4.0.0",
