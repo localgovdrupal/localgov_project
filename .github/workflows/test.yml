@@ -29,6 +29,14 @@ jobs:
       - name: Extract Git branch name from a pull request
         if: github.event_name == 'pull_request'
         run: echo "GIT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
+          
+      - name: Set Composer branch reference for version branches
+        if: endsWith(github.ref, '.x')
+        run: echo "COMPOSER_REF=${GIT_BRANCH}-dev" >> $GITHUB_ENV
+
+      - name: Set Composer branch reference for non-version branches
+        if: endsWith(github.ref, '.x') == false
+        run: echo "COMPOSER_REF=dev-${GIT_BRANCH}" >> $GITHUB_ENV
       
       - name: Cached workspace
         uses: actions/cache@v2
@@ -48,7 +56,7 @@ jobs:
           ref: php${{ matrix.php-version }}
           
       - name: Create LocalGov Drupal project
-        run: composer create-project --stability dev localgovdrupal/localgov-project:dev-${GIT_BRANCH} ./html
+        run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
 
   phpcs:
     name: Coding standards checks
