@@ -1,3 +1,3 @@
-# LocalGovDrupal Composer project template
+# LocalGov Drupal Composer project template
 
-A Composer-based installer for the LocalGovDrupal distribution.
+A Composer-based installer for the LocalGov Drupal distribution.
