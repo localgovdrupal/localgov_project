@@ -1,0 +1,159 @@
+name: Test LocalGov Drupal
+
+on:
+  push:
+    branches:
+      - '[0-9]+.x'
+  pull_request:
+    branches:
+      - '[0-9]+.x'
+
+jobs:
+
+  build:
+    name: Install LocalGov Drupal
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php-version: "7.4"
+
+    steps:
+
+      - name: Extract Git branch name outside of a pull request
+        if: github.event_name != 'pull_request'
+        run: echo "GIT_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+
+      - name: Extract Git branch name from a pull request
+        if: github.event_name == 'pull_request'
+        run: echo "GIT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
+          
+      - name: Set Composer branch reference for version branches
+        if: endsWith(github.ref, '.x')
+        run: echo "COMPOSER_REF=${GIT_BRANCH}-dev" >> $GITHUB_ENV
+
+      - name: Set Composer branch reference for non-version branches
+        if: endsWith(github.ref, '.x') == false
+        run: echo "COMPOSER_REF=dev-${GIT_BRANCH}" >> $GITHUB_ENV
+      
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Clone drupal_container
+        uses: actions/checkout@v2
+        with:
+          repository: localgovdrupal/drupal-container
+          ref: php${{ matrix.php-version }}
+          
+      - name: Create LocalGov Drupal project
+        run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
+
+  phpcs:
+    name: Coding standards checks
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php-version: "7.4"
+
+    steps:
+
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+          restore-keys: |
+            localgov-build-${{ matrix.php-version }}-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Run coding standards checks
+        run: |
+          cd html
+          ./bin/phpcs -p
+
+  phpstan:
+    name: Deprecated code checks
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php-version: "7.4"
+
+    steps:
+
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+          restore-keys: |
+            localgov-build-${{ matrix.php-version }}-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Run deprecated code checks
+        run: |
+          cd html
+          ./bin/phpstan analyse -c ./phpstan.neon ./web/profiles/contrib/localgov/ ./web/modules/contrib/localgov_*
+
+  phpunit:
+    name: PHPUnit tests
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - php-version: "7.4"
+
+    steps:
+
+      - name: Clone drupal_container
+        uses: actions/checkout@v2
+        with:
+          repository: localgovdrupal/drupal-container
+          ref: master
+
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+          restore-keys: |
+            localgov-build-${{ matrix.php-version }}-
+
+      - name: Start Docker environment
+        run: docker-compose -f docker-compose.yml up -d
+
+      - name: Run PHPUnit tests
+        run: |
+          mkdir -p ./html/web/sites/simpletest && chmod 777 ./html/web/sites/simpletest
+          sed -i "s#http://localgov.lndo.site#http://drupal#; s#mysql://database:database@database/database#sqlite://localhost//dev/shm/test.sqlite#" ./html/phpunit.xml.dist
+          docker exec -t drupal bash -c 'chown docker:docker -R /var/www/html'
+          # docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/phpunit --testdox"
+          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4"
