@@ -31,6 +31,9 @@
     <testsuite name="modules">
       <directory>web/modules/contrib/localgov_*</directory>
     </testsuite>
+    <testsuite name="themes">
+      <directory>./web/themes/contrib/localgov_*</directory>
+    </testsuite>
   </testsuites>
 
   <listeners>
