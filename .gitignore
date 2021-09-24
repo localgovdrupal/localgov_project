@@ -24,6 +24,7 @@
 /web/.csslintrc
 /web/.eslintignore
 /web/.eslintrc.json
+/web/.gitignore
 /web/.ht.router.php
 /web/.htaccess
 /web/INSTALL.txt
