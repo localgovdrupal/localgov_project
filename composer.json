@@ -7,7 +7,12 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": ["drupal/entity_reference_facet_link"]
+        },
+        {
+             "type": "vcs",
+             "url": "https://git.drupalcode.org/issue/entity_reference_facet_link-3254358.git"
         }
     ],
     "require": {
