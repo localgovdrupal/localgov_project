@@ -3,10 +3,10 @@ name: Test LocalGov Drupal
 on:
   push:
     branches:
-      - '[0-9]+.x'
+      - '2.x'
   pull_request:
     branches:
-      - '[0-9]+.x'
+      - '2.x'
 
 jobs:
 
@@ -18,31 +18,45 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - php-version: "7.4"
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "7.4"
 
     steps:
 
-      - name: Extract Git branch name outside of a pull request
+      - name: Save git branch and git repo names to env if this is not a pull request
         if: github.event_name != 'pull_request'
-        run: echo "GIT_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+        run: |
+          echo "GIT_BASE=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "GIT_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "GIT_REPO=${GITHUB_REPOSITORY}" >> $GITHUB_ENV
 
-      - name: Extract Git branch name from a pull request
+      - name: Save git branch and git repo names to env if this is a pull request
         if: github.event_name == 'pull_request'
-        run: echo "GIT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
-          
-      - name: Set Composer branch reference for version branches
+        run: |
+          echo "GIT_BASE=${GITHUB_BASE_REF}" >> $GITHUB_ENV
+          echo "GIT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
+          echo "GIT_REPO=${{ github.event.pull_request.head.repo.full_name }}" >> $GITHUB_ENV
+
+      - name: Set composer branch reference for version branches
         if: endsWith(github.ref, '.x')
         run: echo "COMPOSER_REF=${GIT_BRANCH}-dev" >> $GITHUB_ENV
 
-      - name: Set Composer branch reference for non-version branches
+      - name: Set composer branch reference for non-version branches
         if: endsWith(github.ref, '.x') == false
         run: echo "COMPOSER_REF=dev-${GIT_BRANCH}" >> $GITHUB_ENV
-      
+
+      - name: Get the latest tagged release for branch version
+        run: |
+          LATEST_RELEASE=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${GITHUB_REPOSITORY}/git/matching-refs/tags/${GIT_BASE%'.x'} | grep -Po '(?<=refs/tags/)[^"]+' | tail -1)
+          if [ -z $LATEST_RELEASE ]; then LATEST_RELEASE=1; fi
+          echo "LATEST_RELEASE=${LATEST_RELEASE}" >> $GITHUB_ENV
+
       - name: Cached workspace
         uses: actions/cache@v2
         with:
           path: ./html
-          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -54,9 +68,19 @@ jobs:
         with:
           repository: localgovdrupal/drupal-container
           ref: php${{ matrix.php-version }}
-          
+
       - name: Create LocalGov Drupal project
-        run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
+        run: |
+          composer create-project --stability dev --no-install localgovdrupal/localgov-project ./html "${{ matrix.localgov-version }}"
+          composer --working-dir=./html require --no-install localgovdrupal/localgov:${{ matrix.localgov-version }}-dev
+          composer --working-dir=./html require --no-install drupal/core-recommended:${{ matrix.drupal-version }} drupal/core-composer-scaffold:${{ matrix.drupal-version }} drupal/core-project-message:${{ matrix.drupal-version }} drupal/core-dev:${{ matrix.drupal-version }}
+          composer --working-dir=./html install
+
+      - name: Obtain the test target from the repo that triggered this workflow
+        run: |
+          composer --working-dir=html config repositories.1 vcs git@github.com:${GIT_REPO}.git
+          composer global config github-oauth.github.com ${{ github.token }}
+          composer --working-dir=./html require --with-all-dependencies localgovdrupal/${{ github.event.repository.name }}:"${COMPOSER_REF} as ${LATEST_RELEASE}"
 
   phpcs:
     name: Coding standards checks
@@ -67,7 +91,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - php-version: "7.4"
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "7.4"
 
     steps:
 
@@ -75,14 +101,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./html
-          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
           restore-keys: |
-            localgov-build-${{ matrix.php-version }}-
+            localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: '7.4'
 
       - name: Run coding standards checks
         run: |
@@ -98,7 +124,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - php-version: "7.4"
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "7.4"
 
     steps:
 
@@ -106,14 +134,14 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./html
-          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
           restore-keys: |
-            localgov-build-${{ matrix.php-version }}-
+            localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: ${{ matrix.php-version }}
+          php-version: '7.4'
 
       - name: Run deprecated code checks
         run: |
@@ -129,23 +157,25 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - php-version: "7.4"
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "7.4"
 
     steps:
 
-      - name: Clone drupal_container
+      - name: Clone Drupal container
         uses: actions/checkout@v2
         with:
           repository: localgovdrupal/drupal-container
-          ref: master
+          ref: php${{ matrix.php-version }}
 
       - name: Cached workspace
         uses: actions/cache@v2
         with:
           path: ./html
-          key: localgov-build-${{ matrix.php-version }}-${{ github.run_id }}
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
           restore-keys: |
-            localgov-build-${{ matrix.php-version }}-
+            localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-
 
       - name: Start Docker environment
         run: docker-compose -f docker-compose.yml up -d
@@ -153,7 +183,5 @@ jobs:
       - name: Run PHPUnit tests
         run: |
           mkdir -p ./html/web/sites/simpletest && chmod 777 ./html/web/sites/simpletest
-          sed -i "s#http://localgov.lndo.site#http://drupal#; s#mysql://database:database@database/database#sqlite://localhost//dev/shm/test.sqlite#" ./html/phpunit.xml.dist
           docker exec -t drupal bash -c 'chown docker:docker -R /var/www/html'
-          # docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/phpunit --testdox"
           docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4"
