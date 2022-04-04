@@ -7,7 +7,6 @@
 
   <file>web/modules/contrib/</file>
   <file>web/profiles/contrib/localgov/</file>
-  <file>web/themes/contrib/localgov_base/</file>
   <!-- Exclude 3rd party code -->
   <exclude-pattern>web\/modules\/contrib\/(?!localgov_.*)</exclude-pattern>
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
