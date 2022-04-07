@@ -73,13 +73,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - localgov-version: "2.x"
-            drupal-version: "~9.1"
-            php-version: "7.4"
-          - localgov-version: "2.x"
-            drupal-version: "~9.1"
-            php-version: "8.1"
+        localgov-version: ["2.x"]
+        drupal-version: ["~9.1"]
+        php-version: ["7.4","8.1"]
 
     steps:
 
@@ -94,7 +90,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: ${{ matrix.php-version }}
 
       - name: Run coding standards checks
         run: |
@@ -109,13 +105,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - localgov-version: "2.x"
-            drupal-version: "~9.1"
-            php-version: "7.4"
-          - localgov-version: "2.x"
-            drupal-version: "~9.1"
-            php-version: "8.1"
+        localgov-version: ["2.x"]
+        drupal-version: ["~9.1"]
+        php-version: ["7.4","8.1"]
 
     steps:
 
@@ -130,7 +122,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.1'
+          php-version: ${{ matrix.php-version }}
 
       - name: Run deprecated code checks
         run: |
@@ -145,13 +137,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - localgov-version: "2.x"
-            drupal-version: "~9.1"
-            php-version: "7.4"
-          - localgov-version: "2.x"
-            drupal-version: "~9.1"
-            php-version: "8.1"
+        localgov-version: ["2.x"]
+        drupal-version: ["~9.1"]
+        php-version: ["7.4","8.1"]
 
     steps:
 
