@@ -21,7 +21,9 @@ jobs:
           - localgov-version: "2.x"
             drupal-version: "~9.1"
             php-version: "7.4"
-
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "8.1"
     steps:
 
       - name: Save git branch and git repo names to env if this is not a pull request
@@ -78,6 +80,9 @@ jobs:
           - localgov-version: "2.x"
             drupal-version: "~9.1"
             php-version: "7.4"
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "8.1"
 
     steps:
 
@@ -111,6 +116,9 @@ jobs:
           - localgov-version: "2.x"
             drupal-version: "~9.1"
             php-version: "7.4"
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "8.1"
 
     steps:
 
@@ -144,6 +152,9 @@ jobs:
           - localgov-version: "2.x"
             drupal-version: "~9.1"
             php-version: "7.4"
+          - localgov-version: "2.x"
+            drupal-version: "~9.1"
+            php-version: "8.1"
 
     steps:
 
