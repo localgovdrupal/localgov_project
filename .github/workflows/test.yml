@@ -17,8 +17,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version: "2.x"
-        drupal-version: "~9.1"
+        localgov-version: ["2.x"]
+        drupal-version: ["~9.1"]
         php-version: ["7.4","8.1"]
 
     steps:
