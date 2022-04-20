@@ -36,7 +36,14 @@
     "prefer-stable": true,
     "config": {
         "sort-packages": true,
-        "bin-dir": "bin/"
+        "bin-dir": "bin/",
+        "allow-plugins": {
+            "composer/installers": true,
+            "cweagans/composer-patches": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
     },
     "extra": {
         "enable-patching": true,
@@ -84,4 +91,3 @@
 
     }
 }
-
