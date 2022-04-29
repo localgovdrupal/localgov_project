@@ -10,7 +10,7 @@ on:
 
 env:
   LOCALGOV_DRUPAL_PROJECT: localgovdrupal/localgov-project
-  LOCALGOV_DRUPAL_PROJECT_PATH: web
+  LOCALGOV_DRUPAL_PROJECT_PATH: 
 
 jobs:
 
@@ -189,4 +189,4 @@ jobs:
           mkdir -p ./html/web/sites/simpletest && chmod 777 ./html/web/sites/simpletest
           sed -i "s#http://localgov.lndo.site#http://drupal#" ./html/phpunit.xml.dist
           docker exec -t drupal bash -c 'chown docker:docker -R /var/www/html'
-          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4 web"
+          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4 "
