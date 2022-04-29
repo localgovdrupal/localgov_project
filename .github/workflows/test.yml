@@ -3,10 +3,10 @@ name: Test localgovdrupal/localgov-project project
 on:
   push:
     branches:
-      - 2.x
+      - '2.x'
   pull_request:
     branches:
-      - 2.x
+      - '2.x'
 
 env:
   LOCALGOV_DRUPAL_PROJECT: localgovdrupal/localgov-project
@@ -22,12 +22,12 @@ jobs:
       fail-fast: false
       matrix:
         localgov-version:
-          - 2.x
+          - '2.x'
         drupal-version:
-          - 9.3
+          - '~9.3'
         php-version:
-          - 7.4
-          - 8.1
+          - '7.4'
+          - '8.1'
 
     steps:
 
@@ -75,18 +75,7 @@ jobs:
           ref: php${{ matrix.php-version }}
 
       - name: Create LocalGov Drupal project
-        run: |
-          composer create-project --stability dev --no-install localgovdrupal/localgov-project ./html "${{ matrix.localgov-version }}"
-          composer --working-dir=./html require --no-install localgovdrupal/localgov:${{ matrix.localgov-version }}-dev
-          composer --working-dir=./html require --no-install drupal/core-recommended:${{ matrix.drupal-version }} drupal/core-composer-scaffold:${{ matrix.drupal-version }} drupal/core-project-message:${{ matrix.drupal-version }} drupal/core-dev:${{ matrix.drupal-version }}
-          composer --working-dir=./html install
-
-      - name: Obtain the test target from the repo that triggered this workflow
-        run: |
-          composer --working-dir=html config repositories.1 vcs git@github.com:${LOCALGOV_DRUPAL_PROJECT}.git
-          composer global config github-oauth.github.com ${{ github.token }}
-          composer --working-dir=./html require --with-all-dependencies ${LOCALGOV_DRUPAL_PROJECT}:"${COMPOSER_REF} as ${LATEST_RELEASE}"
-
+        run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
 
   phpcs:
     name: Coding standards checks
@@ -97,12 +86,12 @@ jobs:
       fail-fast: false
       matrix:
         localgov-version:
-          - 2.x
+          - '2.x'
         drupal-version:
-          - 9.3
+          - '~9.3'
         php-version:
-          - 7.4
-          - 8.1
+          - '7.4'
+          - '8.1'
 
     steps:
 
@@ -124,7 +113,6 @@ jobs:
           cd html
           ./bin/phpcs -p ${LOCALGOV_DRUPAL_PROJECT_PATH}
 
-
   phpstan:
     name: Deprecated code checks
     needs: build
@@ -134,12 +122,12 @@ jobs:
       fail-fast: false
       matrix:
         localgov-version:
-          - 2.x
+          - '2.x'
         drupal-version:
-          - 9.3
+          - '~9.3'
         php-version:
-          - 7.4
-          - 8.1
+          - '7.4'
+          - '8.1'
 
     steps:
 
@@ -161,7 +149,6 @@ jobs:
           cd html
           ./bin/phpstan analyse -c ./phpstan.neon ${LOCALGOV_DRUPAL_PROJECT_PATH}
 
-
   phpunit:
     name: PHPUnit tests
     needs: build
@@ -171,12 +158,12 @@ jobs:
       fail-fast: false
       matrix:
         localgov-version:
-          - 2.x
+          - '2.x'
         drupal-version:
-          - 9.3
+          - '~9.3'
         php-version:
-          - 7.4
-          - 8.1
+          - '7.4'
+          - '8.1'
 
     steps:
 
@@ -202,4 +189,4 @@ jobs:
           mkdir -p ./html/web/sites/simpletest && chmod 777 ./html/web/sites/simpletest
           sed -i "s#http://localgov.lndo.site#http://drupal#" ./html/phpunit.xml.dist
           docker exec -t drupal bash -c 'chown docker:docker -R /var/www/html'
-          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4 ${LOCALGOV_DRUPAL_PROJECT_PATH}"
+          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes
