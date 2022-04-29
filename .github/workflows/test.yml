@@ -147,8 +147,7 @@ jobs:
       - name: Run deprecated code checks
         run: |
           cd html
-          ./bin/phpstan analyse -c ./phpstan.neon ${LOCALGOV_DRUPAL_PROJECT_PATH}
-
+          ./bin/phpstan analyse -c ./phpstan.neon ./web/modules/contrib/localgov* ./web/profiles/contrib/localgov* ./web/themes/contrib/localgov*
   phpunit:
     name: PHPUnit tests
     needs: build
