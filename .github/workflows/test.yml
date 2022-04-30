@@ -1,1 +1,194 @@
-IyMKIyBNYW5hZ2VkIGJ5IGh0dHBzOi8vZ2l0aHViLmNvbS9sb2NhbGdvdmRydXBhbC9naXRodWJfd29ya2Zsb3dfbWFuYWdlcgotLS0KbmFtZTogVGVzdCBsb2NhbGdvdmRydXBhbC9sb2NhbGdvdi1wcm9qZWN0IHByb2plY3QKCm9uOgogIHB1c2g6CiAgICBicmFuY2hlczoKICAgICAgLSAnMi54JwogIHB1bGxfcmVxdWVzdDoKICAgIGJyYW5jaGVzOgogICAgICAtICcyLngnCgplbnY6CiAgTE9DQUxHT1ZfRFJVUEFMX1BST0pFQ1Q6IGxvY2FsZ292ZHJ1cGFsL2xvY2FsZ292LXByb2plY3QKICBMT0NBTEdPVl9EUlVQQUxfUFJPSkVDVF9QQVRIOiAKCmpvYnM6CgogIGJ1aWxkOgogICAgbmFtZTogSW5zdGFsbCBMb2NhbEdvdiBEcnVwYWwKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKCiAgICBzdHJhdGVneToKICAgICAgZmFpbC1mYXN0OiBmYWxzZQogICAgICBtYXRyaXg6CiAgICAgICAgbG9jYWxnb3YtdmVyc2lvbjoKICAgICAgICAgIC0gJzIueCcKICAgICAgICBkcnVwYWwtdmVyc2lvbjoKICAgICAgICAgIC0gJ345LjMnCiAgICAgICAgcGhwLXZlcnNpb246CiAgICAgICAgICAtICc3LjQnCiAgICAgICAgICAtICc4LjEnCgogICAgc3RlcHM6CgogICAgICAtIG5hbWU6IFNhdmUgZ2l0IGJyYW5jaCBhbmQgZ2l0IHJlcG8gbmFtZXMgdG8gZW52IGlmIHRoaXMgaXMgbm90IGEgcHVsbCByZXF1ZXN0CiAgICAgICAgaWY6IGdpdGh1Yi5ldmVudF9uYW1lICE9ICdwdWxsX3JlcXVlc3QnCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBlY2hvICJHSVRfQkFTRT0ke0dJVEhVQl9SRUYjcmVmcy9oZWFkcy99IiA+PiAkR0lUSFVCX0VOVgogICAgICAgICAgZWNobyAiR0lUX0JSQU5DSD0ke0dJVEhVQl9SRUYjcmVmcy9oZWFkcy99IiA+PiAkR0lUSFVCX0VOVgoKICAgICAgLSBuYW1lOiBTYXZlIGdpdCBicmFuY2ggYW5kIGdpdCByZXBvIG5hbWVzIHRvIGVudiBpZiB0aGlzIGlzIGEgcHVsbCByZXF1ZXN0CiAgICAgICAgaWY6IGdpdGh1Yi5ldmVudF9uYW1lID09ICdwdWxsX3JlcXVlc3QnCiAgICAgICAgcnVuOiB8CiAgICAgICAgICBlY2hvICJHSVRfQkFTRT0ke0dJVEhVQl9CQVNFX1JFRn0iID4+ICRHSVRIVUJfRU5WCiAgICAgICAgICBlY2hvICJHSVRfQlJBTkNIPSR7R0lUSFVCX0hFQURfUkVGfSIgPj4gJEdJVEhVQl9FTlYKCiAgICAgIC0gbmFtZTogU2V0IGNvbXBvc2VyIGJyYW5jaCByZWZlcmVuY2UgZm9yIHZlcnNpb24gYnJhbmNoZXMKICAgICAgICBpZjogZW5kc1dpdGgoZ2l0aHViLnJlZiwgJy54JykKICAgICAgICBydW46IGVjaG8gIkNPTVBPU0VSX1JFRj0ke0dJVF9CUkFOQ0h9LWRldiIgPj4gJEdJVEhVQl9FTlYKCiAgICAgIC0gbmFtZTogU2V0IGNvbXBvc2VyIGJyYW5jaCByZWZlcmVuY2UgZm9yIG5vbi12ZXJzaW9uIGJyYW5jaGVzCiAgICAgICAgaWY6IGVuZHNXaXRoKGdpdGh1Yi5yZWYsICcueCcpID09IGZhbHNlCiAgICAgICAgcnVuOiBlY2hvICJDT01QT1NFUl9SRUY9ZGV2LSR7R0lUX0JSQU5DSH0iID4+ICRHSVRIVUJfRU5WCgogICAgICAtIG5hbWU6IEdldCB0aGUgbGF0ZXN0IHRhZ2dlZCByZWxlYXNlIGZvciBicmFuY2ggdmVyc2lvbgogICAgICAgIHJ1bjogfAogICAgICAgICAgTEFURVNUX1JFTEVBU0U9JChjdXJsIC1IICJBY2NlcHQ6IGFwcGxpY2F0aW9uL3ZuZC5naXRodWIudjMranNvbiIgaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy8ke0dJVEhVQl9SRVBPU0lUT1JZfS9naXQvbWF0Y2hpbmctcmVmcy90YWdzLyR7R0lUX0JBU0UlJy54J30gfCBncmVwIC1QbyAnKD88PXJlZnMvdGFncy8pW14iXSsnIHwgdGFpbCAtMSkKICAgICAgICAgIGlmIFsgLXogJExBVEVTVF9SRUxFQVNFIF07IHRoZW4gTEFURVNUX1JFTEVBU0U9MTsgZmkKICAgICAgICAgIGVjaG8gIkxBVEVTVF9SRUxFQVNFPSR7TEFURVNUX1JFTEVBU0V9IiA+PiAkR0lUSFVCX0VOVgoKICAgICAgLSBuYW1lOiBDYWNoZWQgd29ya3NwYWNlCiAgICAgICAgdXNlczogYWN0aW9ucy9jYWNoZUB2MgogICAgICAgIHdpdGg6CiAgICAgICAgICBwYXRoOiAuL2h0bWwKICAgICAgICAgIGtleTogbG9jYWxnb3YtYnVpbGQtJHt7IG1hdHJpeC5sb2NhbGdvdi12ZXJzaW9uIH19LSR7eyBtYXRyaXguZHJ1cGFsLXZlcnNpb24gfX0tJHt7IG1hdHJpeC5waHAtdmVyc2lvbiB9fS0ke3sgZ2l0aHViLnJ1bl9pZCB9fS0ke3sgc2VjcmV0cy5DQUNIRV9WRVJTSU9OIH19CgogICAgICAtIG5hbWU6IFNldHVwIFBIUAogICAgICAgIHVzZXM6IHNoaXZhbW1hdGh1ci9zZXR1cC1waHBAdjIKICAgICAgICB3aXRoOgogICAgICAgICAgcGhwLXZlcnNpb246ICR7eyBtYXRyaXgucGhwLXZlcnNpb24gfX0KCiAgICAgIC0gbmFtZTogQ2xvbmUgZHJ1cGFsX2NvbnRhaW5lcgogICAgICAgIHVzZXM6IGFjdGlvbnMvY2hlY2tvdXRAdjIKICAgICAgICB3aXRoOgogICAgICAgICAgcmVwb3NpdG9yeTogbG9jYWxnb3ZkcnVwYWwvZHJ1cGFsLWNvbnRhaW5lcgogICAgICAgICAgcmVmOiBwaHAke3sgbWF0cml4LnBocC12ZXJzaW9uIH19CgogICAgICAtIG5hbWU6IENyZWF0ZSBMb2NhbEdvdiBEcnVwYWwgcHJvamVjdAogICAgICAgIHJ1bjogY29tcG9zZXIgY3JlYXRlLXByb2plY3QgLS1zdGFiaWxpdHkgZGV2IGxvY2FsZ292ZHJ1cGFsL2xvY2FsZ292LXByb2plY3Q6JHtDT01QT1NFUl9SRUZ9IC4vaHRtbAoKICBwaHBjczoKICAgIG5hbWU6IENvZGluZyBzdGFuZGFyZHMgY2hlY2tzCiAgICBuZWVkczogYnVpbGQKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKCiAgICBzdHJhdGVneToKICAgICAgZmFpbC1mYXN0OiBmYWxzZQogICAgICBtYXRyaXg6CiAgICAgICAgbG9jYWxnb3YtdmVyc2lvbjoKICAgICAgICAgIC0gJzIueCcKICAgICAgICBkcnVwYWwtdmVyc2lvbjoKICAgICAgICAgIC0gJ345LjMnCiAgICAgICAgcGhwLXZlcnNpb246CiAgICAgICAgICAtICc3LjQnCiAgICAgICAgICAtICc4LjEnCgogICAgc3RlcHM6CgogICAgICAtIG5hbWU6IENhY2hlZCB3b3Jrc3BhY2UKICAgICAgICB1c2VzOiBhY3Rpb25zL2NhY2hlQHYyCiAgICAgICAgd2l0aDoKICAgICAgICAgIHBhdGg6IC4vaHRtbAogICAgICAgICAga2V5OiBsb2NhbGdvdi1idWlsZC0ke3sgbWF0cml4LmxvY2FsZ292LXZlcnNpb24gfX0tJHt7IG1hdHJpeC5kcnVwYWwtdmVyc2lvbiB9fS0ke3sgbWF0cml4LnBocC12ZXJzaW9uIH19LSR7eyBnaXRodWIucnVuX2lkIH19LSR7eyBzZWNyZXRzLkNBQ0hFX1ZFUlNJT04gfX0KICAgICAgICAgIHJlc3RvcmUta2V5czogfAogICAgICAgICAgICBsb2NhbGdvdi1idWlsZC0ke3sgbWF0cml4LmxvY2FsZ292LXZlcnNpb24gfX0tJHt7IG1hdHJpeC5kcnVwYWwtdmVyc2lvbiB9fS0ke3sgbWF0cml4LnBocC12ZXJzaW9uIH19LQoKICAgICAgLSBuYW1lOiBTZXR1cCBQSFAKICAgICAgICB1c2VzOiBzaGl2YW1tYXRodXIvc2V0dXAtcGhwQHYyCiAgICAgICAgd2l0aDoKICAgICAgICAgIHBocC12ZXJzaW9uOiAke3sgbWF0cml4LnBocC12ZXJzaW9uIH19CgogICAgICAtIG5hbWU6IFJ1biBjb2Rpbmcgc3RhbmRhcmRzIGNoZWNrcwogICAgICAgIHJ1bjogfAogICAgICAgICAgY2QgaHRtbAogICAgICAgICAgLi9iaW4vcGhwY3MgLXAgJHtMT0NBTEdPVl9EUlVQQUxfUFJPSkVDVF9QQVRIfQoKICBwaHBzdGFuOgogICAgbmFtZTogRGVwcmVjYXRlZCBjb2RlIGNoZWNrcwogICAgbmVlZHM6IGJ1aWxkCiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CgogICAgc3RyYXRlZ3k6CiAgICAgIGZhaWwtZmFzdDogZmFsc2UKICAgICAgbWF0cml4OgogICAgICAgIGxvY2FsZ292LXZlcnNpb246CiAgICAgICAgICAtICcyLngnCiAgICAgICAgZHJ1cGFsLXZlcnNpb246CiAgICAgICAgICAtICd+OS4zJwogICAgICAgIHBocC12ZXJzaW9uOgogICAgICAgICAgLSAnNy40JwogICAgICAgICAgLSAnOC4xJwoKICAgIHN0ZXBzOgoKICAgICAgLSBuYW1lOiBDYWNoZWQgd29ya3NwYWNlCiAgICAgICAgdXNlczogYWN0aW9ucy9jYWNoZUB2MgogICAgICAgIHdpdGg6CiAgICAgICAgICBwYXRoOiAuL2h0bWwKICAgICAgICAgIGtleTogbG9jYWxnb3YtYnVpbGQtJHt7IG1hdHJpeC5sb2NhbGdvdi12ZXJzaW9uIH19LSR7eyBtYXRyaXguZHJ1cGFsLXZlcnNpb24gfX0tJHt7IG1hdHJpeC5waHAtdmVyc2lvbiB9fS0ke3sgZ2l0aHViLnJ1bl9pZCB9fS0ke3sgc2VjcmV0cy5DQUNIRV9WRVJTSU9OIH19CiAgICAgICAgICByZXN0b3JlLWtleXM6IHwKICAgICAgICAgICAgbG9jYWxnb3YtYnVpbGQtJHt7IG1hdHJpeC5sb2NhbGdvdi12ZXJzaW9uIH19LSR7eyBtYXRyaXguZHJ1cGFsLXZlcnNpb24gfX0tJHt7IG1hdHJpeC5waHAtdmVyc2lvbiB9fS0KCiAgICAgIC0gbmFtZTogU2V0dXAgUEhQCiAgICAgICAgdXNlczogc2hpdmFtbWF0aHVyL3NldHVwLXBocEB2MgogICAgICAgIHdpdGg6CiAgICAgICAgICBwaHAtdmVyc2lvbjogJHt7IG1hdHJpeC5waHAtdmVyc2lvbiB9fQoKICAgICAgLSBuYW1lOiBSdW4gZGVwcmVjYXRlZCBjb2RlIGNoZWNrcwogICAgICAgIHJ1bjogfAogICAgICAgICAgY2QgaHRtbAogICAgICAgICAgLi9iaW4vcGhwc3RhbiBhbmFseXNlIC1jIC4vcGhwc3Rhbi5uZW9uIC4vd2ViL21vZHVsZXMvY29udHJpYi9sb2NhbGdvdiogLi93ZWIvcHJvZmlsZXMvY29udHJpYi9sb2NhbGdvdiogLi93ZWIvdGhlbWVzL2NvbnRyaWIvbG9jYWxnb3YqCiAgcGhwdW5pdDoKICAgIG5hbWU6IFBIUFVuaXQgdGVzdHMKICAgIG5lZWRzOiBidWlsZAogICAgcnVucy1vbjogdWJ1bnR1LWxhdGVzdAoKICAgIHN0cmF0ZWd5OgogICAgICBmYWlsLWZhc3Q6IGZhbHNlCiAgICAgIG1hdHJpeDoKICAgICAgICBsb2NhbGdvdi12ZXJzaW9uOgogICAgICAgICAgLSAnMi54JwogICAgICAgIGRydXBhbC12ZXJzaW9uOgogICAgICAgICAgLSAnfjkuMycKICAgICAgICBwaHAtdmVyc2lvbjoKICAgICAgICAgIC0gJzcuNCcKICAgICAgICAgIC0gJzguMScKCiAgICBzdGVwczoKCiAgICAgIC0gbmFtZTogQ2xvbmUgRHJ1cGFsIGNvbnRhaW5lcgogICAgICAgIHVzZXM6IGFjdGlvbnMvY2hlY2tvdXRAdjIKICAgICAgICB3aXRoOgogICAgICAgICAgcmVwb3NpdG9yeTogbG9jYWxnb3ZkcnVwYWwvZHJ1cGFsLWNvbnRhaW5lcgogICAgICAgICAgcmVmOiBwaHAke3sgbWF0cml4LnBocC12ZXJzaW9uIH19CgogICAgICAtIG5hbWU6IENhY2hlZCB3b3Jrc3BhY2UKICAgICAgICB1c2VzOiBhY3Rpb25zL2NhY2hlQHYyCiAgICAgICAgd2l0aDoKICAgICAgICAgIHBhdGg6IC4vaHRtbAogICAgICAgICAga2V5OiBsb2NhbGdvdi1idWlsZC0ke3sgbWF0cml4LmxvY2FsZ292LXZlcnNpb24gfX0tJHt7IG1hdHJpeC5kcnVwYWwtdmVyc2lvbiB9fS0ke3sgbWF0cml4LnBocC12ZXJzaW9uIH19LSR7eyBnaXRodWIucnVuX2lkIH19LSR7eyBzZWNyZXRzLkNBQ0hFX1ZFUlNJT04gfX0KICAgICAgICAgIHJlc3RvcmUta2V5czogfAogICAgICAgICAgICBsb2NhbGdvdi1idWlsZC0ke3sgbWF0cml4LmxvY2FsZ292LXZlcnNpb24gfX0tJHt7IG1hdHJpeC5kcnVwYWwtdmVyc2lvbiB9fS0ke3sgbWF0cml4LnBocC12ZXJzaW9uIH19LQoKICAgICAgLSBuYW1lOiBTdGFydCBEb2NrZXIgZW52aXJvbm1lbnQKICAgICAgICBydW46IGRvY2tlci1jb21wb3NlIC1mIGRvY2tlci1jb21wb3NlLnltbCB1cCAtZAoKICAgICAgLSBuYW1lOiBSdW4gUEhQVW5pdCB0ZXN0cwogICAgICAgIHJ1bjogfAogICAgICAgICAgbWtkaXIgLXAgLi9odG1sL3dlYi9zaXRlcy9zaW1wbGV0ZXN0ICYmIGNobW9kIDc3NyAuL2h0bWwvd2ViL3NpdGVzL3NpbXBsZXRlc3QKICAgICAgICAgIHNlZCAtaSAicyNodHRwOi8vbG9jYWxnb3YubG5kby5zaXRlI2h0dHA6Ly9kcnVwYWwjIiAuL2h0bWwvcGhwdW5pdC54bWwuZGlzdAogICAgICAgICAgZG9ja2VyIGV4ZWMgLXQgZHJ1cGFsIGJhc2ggLWMgJ2Nob3duIGRvY2tlcjpkb2NrZXIgLVIgL3Zhci93d3cvaHRtbCcKICAgICAgICAgIGRvY2tlciBleGVjIC11IGRvY2tlciAtdCBkcnVwYWwgYmFzaCAtYyAiY2QgL3Zhci93d3cvaHRtbCAmJiAuL2Jpbi9wYXJhdGVzdCAtLXByb2Nlc3Nlcz00ICIK
+##
+# Managed by https://github.com/localgovdrupal/github_workflow_manager
+---
+name: Test localgovdrupal/localgov-project project
+
+on:
+  push:
+    branches:
+      - '2.x'
+  pull_request:
+    branches:
+      - '2.x'
+
+env:
+  LOCALGOV_DRUPAL_PROJECT: localgovdrupal/localgov-project
+  LOCALGOV_DRUPAL_PROJECT_PATH: 
+
+jobs:
+
+  build:
+    name: Install LocalGov Drupal
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        localgov-version:
+          - '2.x'
+        drupal-version:
+          - '~9.3'
+        php-version:
+          - '7.4'
+          - '8.1'
+
+    steps:
+
+      - name: Save git branch and git repo names to env if this is not a pull request
+        if: github.event_name != 'pull_request'
+        run: |
+          echo "GIT_BASE=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+          echo "GIT_BRANCH=${GITHUB_REF#refs/heads/}" >> $GITHUB_ENV
+
+      - name: Save git branch and git repo names to env if this is a pull request
+        if: github.event_name == 'pull_request'
+        run: |
+          echo "GIT_BASE=${GITHUB_BASE_REF}" >> $GITHUB_ENV
+          echo "GIT_BRANCH=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
+
+      - name: Set composer branch reference for version branches
+        if: endsWith(github.ref, '.x')
+        run: echo "COMPOSER_REF=${GIT_BRANCH}-dev" >> $GITHUB_ENV
+
+      - name: Set composer branch reference for non-version branches
+        if: endsWith(github.ref, '.x') == false
+        run: echo "COMPOSER_REF=dev-${GIT_BRANCH}" >> $GITHUB_ENV
+
+      - name: Get the latest tagged release for branch version
+        run: |
+          LATEST_RELEASE=$(curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${GITHUB_REPOSITORY}/git/matching-refs/tags/${GIT_BASE%'.x'} | grep -Po '(?<=refs/tags/)[^"]+' | tail -1)
+          if [ -z $LATEST_RELEASE ]; then LATEST_RELEASE=1; fi
+          echo "LATEST_RELEASE=${LATEST_RELEASE}" >> $GITHUB_ENV
+
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Clone drupal_container
+        uses: actions/checkout@v2
+        with:
+          repository: localgovdrupal/drupal-container
+          ref: php${{ matrix.php-version }}
+
+      - name: Create LocalGov Drupal project
+        run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
+
+  phpcs:
+    name: Coding standards checks
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        localgov-version:
+          - '2.x'
+        drupal-version:
+          - '~9.3'
+        php-version:
+          - '7.4'
+          - '8.1'
+
+    steps:
+
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
+          restore-keys: |
+            localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Run coding standards checks
+        run: |
+          cd html
+          ./bin/phpcs -p ${LOCALGOV_DRUPAL_PROJECT_PATH}
+
+  phpstan:
+    name: Deprecated code checks
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        localgov-version:
+          - '2.x'
+        drupal-version:
+          - '~9.3'
+        php-version:
+          - '7.4'
+          - '8.1'
+
+    steps:
+
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
+          restore-keys: |
+            localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+
+      - name: Run deprecated code checks
+        run: |
+          cd html
+          ./bin/phpstan analyse -c ./phpstan.neon ./web/modules/contrib/localgov* ./web/profiles/contrib/localgov* ./web/themes/contrib/localgov*
+  phpunit:
+    name: PHPUnit tests
+    needs: build
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        localgov-version:
+          - '2.x'
+        drupal-version:
+          - '~9.3'
+        php-version:
+          - '7.4'
+          - '8.1'
+
+    steps:
+
+      - name: Clone Drupal container
+        uses: actions/checkout@v2
+        with:
+          repository: localgovdrupal/drupal-container
+          ref: php${{ matrix.php-version }}
+
+      - name: Cached workspace
+        uses: actions/cache@v2
+        with:
+          path: ./html
+          key: localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-${{ github.run_id }}-${{ secrets.CACHE_VERSION }}
+          restore-keys: |
+            localgov-build-${{ matrix.localgov-version }}-${{ matrix.drupal-version }}-${{ matrix.php-version }}-
+
+      - name: Start Docker environment
+        run: docker-compose -f docker-compose.yml up -d
+
+      - name: Run PHPUnit tests
+        run: |
+          mkdir -p ./html/web/sites/simpletest && chmod 777 ./html/web/sites/simpletest
+          sed -i "s#http://localgov.lndo.site#http://drupal#" ./html/phpunit.xml.dist
+          docker exec -t drupal bash -c 'chown docker:docker -R /var/www/html'
+          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4 "
