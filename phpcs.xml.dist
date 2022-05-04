@@ -6,9 +6,10 @@
   <config name="drupal_core_version" value="9"/>
 
   <file>web/modules/contrib/</file>
-  <file>web/profiles/contrib/localgov/</file>
+  <file>web/profiles/contrib/</file>
+  <file>web/themes/contrib/</file>
   <!-- Exclude 3rd party code -->
-  <exclude-pattern>web\/modules\/contrib\/(?!localgov_.*)</exclude-pattern>
+  <exclude-pattern>web\/(modules|profiles|themes)\/contrib\/(?!localgov.*)</exclude-pattern>
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
   <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 
