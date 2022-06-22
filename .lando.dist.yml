@@ -4,6 +4,7 @@ config:
   xdebug: false
   webroot: web
   php: '8.1'
+  database: mariadb
 proxy:
   mailhog:
     - mail.localgov.lndo.site
@@ -52,6 +53,12 @@ services:
       expose:
         - '4444'
       command: ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
+  solr:
+    type: solr:8
+    portforward: true
+    core: lando
+    config:
+      dir: assets/solr-8.x
 tooling:
   deprecated:
     service: appserver
