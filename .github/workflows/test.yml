@@ -10,6 +10,8 @@ on:
   pull_request:
     branches:
       - '2.x'
+  schedule:
+    - cron: "0 7 * * *"
 
 env:
   LOCALGOV_DRUPAL_PROJECT: localgovdrupal/localgov-project
