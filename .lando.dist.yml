@@ -53,10 +53,10 @@ services:
       expose:
         - '4444'
       command: ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
-  solr:
+  solr-sitewide:
     type: solr:8
     portforward: true
-    core: lando
+    core: sitewide
     config:
       dir: assets/solr-8.x
 tooling:
