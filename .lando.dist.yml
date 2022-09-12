@@ -19,7 +19,7 @@ services:
         MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", { "chromeOptions": { "w3c": false } }, "http://chromedriver:4444/wd/hub"]'
         BROWSERTEST_OUTPUT_DIRECTORY: '/app/web/sites/simpletest/browser_output'
         BROWSERTEST_OUTPUT_BASE_URL: 'https://localgov.lndo.site'
-    buid:
+    build:
       - mkdir -p web/sites/simpletest/browser_output
   database:
     creds:
