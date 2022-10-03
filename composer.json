@@ -16,7 +16,7 @@
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
-        "localgovdrupal/localgov": "^2.0",
+        "localgovdrupal/localgov": "dev-fix/471-disable-testing-update-schema as 2.3.12",
         "localgovdrupal/localgov_directories": "dev-feature/layout-paragraphs-2 as 2.3.4",
         "localgovdrupal/localgov_page": "dev-feature/layout-paragraphs-2",
         "localgovdrupal/localgov_paragraphs": "dev-feature/layout-paragraphs-2 as 2.1.3",
