@@ -1,4 +1,7 @@
-name: Test LocalGov Drupal
+##
+# Managed by https://github.com/localgovdrupal/github_workflow_manager
+---
+name: Test localgovdrupal/localgov-project project
 
 on:
   push:
@@ -7,6 +10,12 @@ on:
   pull_request:
     branches:
       - '2.x'
+  schedule:
+    - cron: "0 7 * * *"
+
+env:
+  LOCALGOV_DRUPAL_PROJECT: localgovdrupal/localgov-project
+  LOCALGOV_DRUPAL_PROJECT_PATH:
 
 jobs:
 
@@ -95,7 +104,7 @@ jobs:
       - name: Run coding standards checks
         run: |
           cd html
-          ./bin/phpcs -p
+          ./bin/phpcs -p ${LOCALGOV_DRUPAL_PROJECT_PATH}
 
   phpstan:
     name: Deprecated code checks
@@ -127,8 +136,7 @@ jobs:
       - name: Run deprecated code checks
         run: |
           cd html
-          ./bin/phpstan analyse -c ./phpstan.neon ./web/profiles/contrib/localgov/ ./web/modules/contrib/localgov_*
-
+          ./bin/phpstan analyse -c ./phpstan.neon ./web/modules/contrib/localgov* ./web/profiles/contrib/localgov* ./web/themes/contrib/localgov*
   phpunit:
     name: PHPUnit tests
     needs: build

@@ -28,6 +28,7 @@
 /web/.ht.router.php
 /web/.htaccess
 /web/INSTALL.txt
+/web/README.md
 /web/README.txt
 /web/autoload.php
 /web/example.gitignore
