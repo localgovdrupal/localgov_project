@@ -65,5 +65,8 @@
 # Ignore Lando overrides
 .lando.local.yml
 
+# Ignore Lando Solr config
+/.lando/solr
+
 # Ignore temp files
 /.phpunit.result.cache
