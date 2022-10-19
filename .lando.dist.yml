@@ -9,6 +9,8 @@ proxy:
     - mail.localgov.lndo.site
   adminer:
     - adminer.localgov.lndo.site
+  solr-sitewide:
+    - 'solr-sitewide.localgov.lndo.site:8983'
 services:
   appserver:
     overrides:
@@ -56,6 +58,11 @@ services:
       expose:
         - '4444'
       command: ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
+  solr-sitewide:
+    type: solr:8
+    core: sitewide
+    config:
+      dir: .lando/solr/localgov_sitewide_solr
 tooling:
   deprecated:
     service: appserver
@@ -93,3 +100,6 @@ tooling:
     service: node
   yarn:
     service: node
+  update-solr-config:
+    service: appserver
+    cmd: /app/.lando/update-solr-config.sh
