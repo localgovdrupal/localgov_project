@@ -28,6 +28,7 @@
 /web/.ht.router.php
 /web/.htaccess
 /web/INSTALL.txt
+/web/README.md
 /web/README.txt
 /web/autoload.php
 /web/example.gitignore
@@ -63,6 +64,9 @@
 
 # Ignore Lando overrides
 .lando.local.yml
+
+# Ignore Lando Solr config
+/.lando/solr
 
 # Ignore temp files
 /.phpunit.result.cache
