@@ -1,4 +1,4 @@
-name: localgov-project
+name: localgov
 type: drupal9
 docroot: web
 php_version: "8.1"
