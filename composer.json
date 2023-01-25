@@ -13,7 +13,7 @@
                 "version": "3.x-dev",
                 "source": {
                     "type": "git",
-                    "url": "git@git.drupal.org:issue/date_recur_modular-3296930.git",
+                    "url": "https://git.drupalcode.org/issue/date_recur_modular-3296930",
                     "reference": "6ea45215b83b79e78849d9af7a8abd4745a8fb7e"
                 }
             }
@@ -26,7 +26,7 @@
                 "version": "dev-3325259-d10",
                 "source": {
                     "type": "git",
-                    "url": "git@git.drupal.org:issue/preview_link-3325259.git",
+                    "url": "https://git.drupal.org/issue/preview_link-3325259.git",
                     "reference": "ded9cb9de4fefa288479ff8b5f9c36cbe53afac9"
                 }
             }
