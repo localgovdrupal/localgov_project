@@ -70,3 +70,10 @@
 
 # Ignore temp files
 /.phpunit.result.cache
+
+# Ignore ddev configuration folders
+.ddev/.global_commands/
+.ddev/commands/
+.ddev/homeadditions/
+.ddev/providers/
+.ddev/xhprof/
