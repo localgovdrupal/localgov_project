@@ -17,6 +17,9 @@
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
         "localgovdrupal/localgov": "^2.0",
+        "localgovdrupal/localgov_events": "dev-fix/2.x/101-installOptionalConfig as 2.0.13",
+        "localgovdrupal/localgov_guides": "dev-fix/2.x/115-installOptionalConfig as 2.0.9",
+        "localgovdrupal/localgov_step_by_step": "dev-fix/2.x/80-installOptionalConfig as 2.0.9",
         "localgovdrupal/localgov_search_solr": "^1.0@alpha"
     },
     "require-dev": {
