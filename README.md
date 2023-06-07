@@ -1,5 +1,7 @@
 # LocalGov Drupal Composer project template
 
+![Tests](https://github.com/localgovdrupal/localgov_project/actions/workflows/test.yml/badge.svg)
+
 A Composer-based installer for the LocalGov Drupal distribution.
 
 This project template should provide a kickstart for managing your site dependencies with Composer.
