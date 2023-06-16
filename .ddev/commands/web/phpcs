@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run phpcs in the web container.
+## Usage: phpcs
+## Example: "ddev phpcs"
+
+/var/www/html/bin/phpcs -p
