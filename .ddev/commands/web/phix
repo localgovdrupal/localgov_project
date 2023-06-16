@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run phpcbf to automatically fix some phpcs errors.
+## Usage: phix
+## Example: "ddev phix"
+
+/var/www/html/bin/phpcbf
