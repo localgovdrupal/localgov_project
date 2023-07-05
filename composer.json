@@ -15,8 +15,8 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-recommended": "^10.0",
-        "localgovdrupal/localgov": "3.x",
-        "localgovdrupal/localgov_search_solr": "dev-feature/drupal-10 as 1.1.0-alpha1"
+        "localgovdrupal/localgov": "^3.0@alpha",
+        "localgovdrupal/localgov_search_solr": "^1.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.0",

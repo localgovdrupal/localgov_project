@@ -39,6 +39,13 @@ services:
       image: dehy/adminer
       command: '/bin/s6-svscan /etc/services.d'
     portforward: true
+  node:
+    type: 'node:16'
+    globals:
+      gulp-cli: latest
+    overrides:
+      ports:
+      - '3050:3050'
   chromedriver:
     type: compose
     services:
@@ -85,6 +92,14 @@ tooling:
     description: Disable xdebug for apache.
     cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
     user: root
+  gulp:
+    service: node
+  node:
+    service: node
+  npm:
+    service: node
+  yarn:
+    service: node
   update-solr-config:
     service: appserver
     cmd: /app/.lando/update-solr-config.sh
