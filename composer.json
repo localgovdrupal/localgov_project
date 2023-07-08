@@ -15,7 +15,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.0",
         "drupal/core-recommended": "^10.0",
-        "localgovdrupal/localgov": "^3.0@alpha",
+        "localgovdrupal/localgov": "dev-do-not-merge/3.x/geo-entity",
         "localgovdrupal/localgov_search_solr": "^1.1"
     },
     "require-dev": {
