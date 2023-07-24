@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run PHPSTAN to report on code deprecations.
+## Usage: phpix
+## Example: "ddev phix"
+
+/var/www/html/bin/phpstan

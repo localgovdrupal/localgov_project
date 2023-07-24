@@ -1,5 +1,5 @@
 name: localgov
-recipe: drupal9
+recipe: drupal10
 config:
   xdebug: false
   webroot: web

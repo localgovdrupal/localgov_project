@@ -6,10 +6,10 @@ name: Test localgovdrupal/localgov-project project
 on:
   push:
     branches:
-      - '2.x'
+      - '3.x'
   pull_request:
     branches:
-      - '2.x'
+      - '3.x'
   schedule:
     - cron: "0 7 * * *"
 
@@ -26,9 +26,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version: ["2.x"]
-        drupal-version: ["~9.1"]
-        php-version: ["7.4","8.1"]
+        localgov-version:
+          - '3.x'
+        drupal-version:
+          - '~10.0'
+        php-version:
+          - '8.1'
 
     steps:
 
@@ -82,9 +85,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version: ["2.x"]
-        drupal-version: ["~9.1"]
-        php-version: ["7.4","8.1"]
+        localgov-version:
+          - '3.x'
+        drupal-version:
+          - '~10.0'
+        php-version:
+          - '8.1'
 
     steps:
 
@@ -114,9 +120,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version: ["2.x"]
-        drupal-version: ["~9.1"]
-        php-version: ["7.4","8.1"]
+        localgov-version:
+          - '3.x'
+        drupal-version:
+          - '~10.0'
+        php-version:
+          - '8.1'
 
     steps:
 
@@ -145,9 +154,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version: ["2.x"]
-        drupal-version: ["~9.1"]
-        php-version: ["7.4","8.1"]
+        localgov-version:
+          - '3.x'
+        drupal-version:
+          - '~10.0'
+        php-version:
+          - '8.1'
 
     steps:
 
