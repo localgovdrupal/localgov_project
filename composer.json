@@ -16,7 +16,7 @@
         "drupal/core-composer-scaffold": "^9.1",
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1@stable",
-        "localgovdrupal/localgov": "^2.0",
+        "localgovdrupal/localgov": "dev-fix/2.x/470-534-remove-patches as 2.3.20",
         "localgovdrupal/localgov_search_solr": "^1.0@alpha"
     },
     "require-dev": {
