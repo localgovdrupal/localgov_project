@@ -4,4 +4,4 @@
 ## Usage: phix
 ## Example: "ddev phix"
 
-/var/www/html/bin/phpcbf
+/var/www/html/bin/phpcbf $*

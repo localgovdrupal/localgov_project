@@ -4,4 +4,4 @@
 ## Usage: phpcs
 ## Example: "ddev phpcs"
 
-/var/www/html/bin/phpcs -p
+/var/www/html/bin/phpcs -p $*
