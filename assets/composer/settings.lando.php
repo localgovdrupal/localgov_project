@@ -131,14 +131,19 @@ $settings['rebuild_access'] = TRUE;
 $settings['skip_permissions_hardening'] = TRUE;
 
 /**
+ * Get Lando info
+ */
+$lando_info = json_decode(getenv('LANDO_INFO'), TRUE);
+
+/**
  * Lando database credentials.
  */
 $databases['default']['default'] = array (
-  'database' => 'database',
-  'username' => 'database',
-  'password' => 'database',
-  'host' => 'database',
-  'port' => '3306',
+  'database' => $lando_info['database']['creds']['database'],
+  'username' => $lando_info['database']['creds']['user'],
+  'password' => $lando_info['database']['creds']['password'],
+  'host' => $lando_info['database']['internal_connection']['host'],
+  'port' => $lando_info['database']['internal_connection']['port'],
   'driver' => 'mysql',
   'prefix' => '',
   'collation' => 'utf8mb4_general_ci',

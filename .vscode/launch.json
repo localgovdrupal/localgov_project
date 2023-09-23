@@ -1,12 +1,21 @@
 {
     "configurations": [
         {
-            "name": "Listen for Xdebug",
+            "name": "Listen for Xdebug (ddev)",
             "type": "php",
             "request": "launch",
             "port": 9003,
             "pathMappings": {
                 "/var/www/html": "${workspaceRoot}"
+              }
+        },
+        {
+            "name": "Listen for Xdebug (lando)",
+            "type": "php",
+            "request": "launch",
+            "port": 9003,
+            "pathMappings": {
+                "/app": "${workspaceRoot}"
               }
         }
     ]
