@@ -33,6 +33,7 @@ jobs:
           - '~10.0'
         php-version:
           - '8.1'
+          - '8.2'
 
     steps:
 
@@ -92,6 +93,7 @@ jobs:
           - '~10.0'
         php-version:
           - '8.1'
+          - '8.2'
 
     steps:
 
@@ -127,6 +129,7 @@ jobs:
           - '~10.0'
         php-version:
           - '8.1'
+          - '8.2'
 
     steps:
 
@@ -161,6 +164,7 @@ jobs:
           - '~10.0'
         php-version:
           - '8.1'
+          - '8.2'
 
     steps:
 
