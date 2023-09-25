@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-## Description: Run phpunit in the web container to run phpunit tests. 
+## Description: Run phpunit in the web container to run phpunit tests.
 ## Usage: phpunit
 ## Example: "ddev phpunit"
 
-/var/www/html/bin/phpunit
+/var/www/html/bin/phpunit $*
