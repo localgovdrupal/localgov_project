@@ -23,6 +23,8 @@ jobs:
   build:
     name: Install LocalGov Drupal
     runs-on: ubuntu-latest
+    env:
+      COMPOSER_EXIT_ON_PATCH_FAILURE: '1'
 
     strategy:
       fail-fast: false
