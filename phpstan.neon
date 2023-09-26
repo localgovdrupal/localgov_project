@@ -8,3 +8,5 @@ parameters:
     - '#Plugin definitions cannot be altered.#'
     - '#Missing cache backend declaration for performance.#'
     - '#Plugin manager has cache backend specified but does not declare cache tags.#'
+    # new static() is a best practice in Drupal, so we cannot fix that.
+    - '#^Unsafe usage of new static#'
