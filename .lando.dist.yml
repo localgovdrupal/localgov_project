@@ -1,7 +1,6 @@
 name: localgov
 recipe: drupal10
 config:
-  xdebug: false
   webroot: web
   php: '8.1'
 proxy:
@@ -13,6 +12,11 @@ proxy:
     - 'solr-sitewide.localgov.lndo.site:8983'
 services:
   appserver:
+    xdebug: true
+    build_as_root:
+      # This disables Xdebug during build, but puts all dependencies in place
+      # ready for the tooling to enable Xdebug.
+      - rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload
     overrides:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/web'
@@ -21,6 +25,9 @@ services:
         MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", { "chromeOptions": { "w3c": false } }, "http://chromedriver:4444/wd/hub"]'
         BROWSERTEST_OUTPUT_DIRECTORY: '/app/web/sites/simpletest/browser_output'
         BROWSERTEST_OUTPUT_BASE_URL: 'https://localgov.lndo.site'
+        # Support debugging CLI with Xdebug.
+        PHP_IDE_CONFIG: "serverName=appserver"
+        XDEBUG_SESSION: "lando"
     build:
       - mkdir -p web/sites/simpletest/browser_output
   database:
@@ -40,7 +47,7 @@ services:
       command: '/bin/s6-svscan /etc/services.d'
     portforward: true
   node:
-    type: 'node:16'
+    type: 'node:18'
     globals:
       gulp-cli: latest
     overrides:
@@ -84,13 +91,13 @@ tooling:
     cmd: '/app/bin/phpunit --testdox'
   xdebug-on:
     service: appserver
-    description: Enable xdebug for apache.
-    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    description: Enable Xdebug for Apache.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && docker-php-ext-enable xdebug && /etc/init.d/apache2 reload && echo "Xdebug enabled"
     user: root
   xdebug-off:
     service: appserver
-    description: Disable xdebug for apache.
-    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    description: Disable Xdebug for Apache.
+    cmd: rm -f /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload && echo "Xdebug disabled"
     user: root
   gulp:
     service: node
