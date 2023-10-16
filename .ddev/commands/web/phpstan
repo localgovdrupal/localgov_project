@@ -4,4 +4,4 @@
 ## Usage: phpix
 ## Example: "ddev phix"
 
-/var/www/html/bin/phpstan
+/var/www/html/bin/phpstan $*
