@@ -82,7 +82,7 @@ jobs:
         run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
 
       - name: Obtain suggested dependencies
-        run: composer --working-dir=./html/ suggests --list | xargs composer --working-dir=./html require
+        run: composer --working-dir=./html/ suggests --all --list | xargs composer --working-dir=./html require
 
   phpcs:
     name: Coding standards checks
