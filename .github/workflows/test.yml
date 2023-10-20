@@ -82,7 +82,7 @@ jobs:
         run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
 
       - name: Obtain all dev dependencies
-        run:  jq '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | xargs composer --working-dir=./html require --dev --no-interaction --no-plugins
+        run:  jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction --no-plugins
 
   phpcs:
     name: Coding standards checks
