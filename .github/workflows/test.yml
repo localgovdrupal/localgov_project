@@ -81,8 +81,8 @@ jobs:
       - name: Create LocalGov Drupal project
         run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
 
-      - name: Obtain suggested dependencies
-        run: composer --working-dir=./html/ suggests --all --list | grep -v '^ext-' | xargs composer --working-dir=./html require
+      - name: Obtain all dev dependencies
+        run:  jq '.packages[]."require-dev" | keys? | flatten[]' ./html/composer.lock | xargs composer --working-dir=./html require --dev --no-interaction --no-plugins
 
   phpcs:
     name: Coding standards checks
