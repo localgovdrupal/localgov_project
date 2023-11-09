@@ -10,8 +10,14 @@ This project template should provide a kickstart for managing your site dependen
 
 For guidance on installing see: 
 
- - [Installing LocalGov Drupal locally with composer](https://github.com/localgovdrupal/localgov/blob/2.x/README.md#installing-localgov-drupal-locally-with-composer)
+ - [Installing LocalGov Drupal locally with composer](https://github.com/localgovdrupal/localgov#installing-localgov-drupal-locally-with-composer)
  - [Getting started on LocalGov Drupal docs](https://docs.localgovdrupal.org/devs/getting-started/)
+
+## composer.json and composer.lock
+
+We expect most projects using this package will start with the composer.json in this package, committing it to your own project repository as your own root composer.json. You can then extend composer.json, requiring other Drupal and composer packages and evolve your codebase as needed.
+
+Once you have run a `composer create-project` command, it is usually desirable to commit the composer.lock file to your project repository and use this lock file to control the specific version of packages that you deploy to dev, test and ultimately production hosting environments. 
 
 ## Gitpod
 
