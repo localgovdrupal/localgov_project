@@ -79,9 +79,10 @@ jobs:
           ref: php${{ matrix.php-version }}
 
       - name: Create LocalGov Drupal project
-        run: |
-          composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
-          composer --working-dir=./html require drupal/group
+        run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
+
+      - name: Obtain all dev dependencies for LocalGov Drupal
+        run: jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
 
   phpcs:
     name: Coding standards checks
