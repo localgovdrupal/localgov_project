@@ -77,3 +77,7 @@
 .ddev/homeadditions/
 .ddev/providers/
 .ddev/xhprof/
+
+# Ignore macOS DS_Store files
+.DS_Store
+**/.DS_Store
