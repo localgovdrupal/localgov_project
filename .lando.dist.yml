@@ -12,6 +12,8 @@ proxy:
     - 'solr-sitewide.localgov.lndo.site:8983'
 services:
   appserver:
+    scanner:
+      retry: 5
     xdebug: true
     build_as_root:
       # This disables Xdebug during build, but puts all dependencies in place
