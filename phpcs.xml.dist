@@ -3,10 +3,12 @@
   <description>PHP CodeSniffer configuration for LocalGovDrupal.</description>
 
   <arg name="extensions" value="inc,install,module,php,profile,test,theme,yml"/>
-  <config name="drupal_core_version" value="9"/>
+  <config name="drupal_core_version" value="10"/>
 
   <file>web/modules/contrib/</file>
   <file>web/profiles/contrib/localgov/</file>
+  <file>web/themes/contrib/localgov_base/</file>
+  <file>web/themes/contrib/localgov_scarfolk/</file>
   <!-- Exclude 3rd party code -->
   <exclude-pattern>web\/modules\/contrib\/(?!localgov_.*)</exclude-pattern>
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
