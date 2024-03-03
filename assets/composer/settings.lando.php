@@ -147,7 +147,7 @@ $databases['default']['default'] = array (
   'driver' => 'mysql',
   'prefix' => '',
   'collation' => 'utf8mb4_general_ci',
-  );
+);
 
 /**
  * Error reporting.
