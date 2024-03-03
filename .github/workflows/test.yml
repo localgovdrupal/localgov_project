@@ -121,7 +121,7 @@ jobs:
           ./bin/phpcs -p ${LOCALGOV_DRUPAL_PROJECT_PATH}
 
   phpstan:
-    name: Deprecated code checks
+    name: PHPStan code checks
     needs: build
     runs-on: ubuntu-latest
 
@@ -151,7 +151,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-version }}
 
-      - name: Run deprecated code checks
+      - name: Run PHPStan code checks
         run: |
           cd html
           ./bin/phpstan analyse -c ./phpstan.neon ./web/modules/contrib/localgov* ./web/profiles/contrib/localgov* ./web/themes/contrib/localgov*
