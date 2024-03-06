@@ -7,10 +7,12 @@
 
   <file>web/modules/contrib/</file>
   <file>web/profiles/contrib/localgov/</file>
-  <file>web/themes/contrib/localgov_base/</file>
-  <file>web/themes/contrib/localgov_scarfolk/</file>
+  <file>web/themes/contrib/</file>
+
   <!-- Exclude 3rd party code -->
   <exclude-pattern>web\/modules\/contrib\/(?!localgov_.*)</exclude-pattern>
+  <exclude-pattern>web\/themes\/contrib\/(?!localgov_.*)</exclude-pattern>
+
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
   <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 
