@@ -1,8 +1,20 @@
+includes:
+  - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+
 parameters:
-  # we don't set a level so that we check deprecations only, and
-  # not to highlight unknown classes which are from composer suggestions
+  level: 1
   customRulesetUsed: true
   reportUnmatchedIgnoredErrors: false
+  checkFunctionArgumentTypes: true
+
+  strictRules:
+    allRules: false
+    strictCalls: true
+
+  # Exclude microsite project submodules from phpstan checks on the main project.
+  excludePaths:
+    - web/modules/contrib/localgov_alert_banner/modules/group_alert_banner/*
+
   # Ignore phpstan-drupal extension's rules.
   ignoreErrors:
     - '#\Drupal calls should be avoided in classes, use dependency injection instead#'
@@ -11,3 +23,4 @@ parameters:
     - '#Plugin manager has cache backend specified but does not declare cache tags.#'
     # new static() is a best practice in Drupal, so we cannot fix that.
     - '#^Unsafe usage of new static#'
+    - '#Dynamic call to static method PHPUnit\\Framework\\.*#'

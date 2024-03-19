@@ -73,7 +73,7 @@ services:
     config:
       dir: .lando/solr/localgov_sitewide_solr
 tooling:
-  deprecated:
+  sca:
     service: appserver
     cmd: 'bash -c "/app/bin/phpstan analyse -c /app/phpstan.neon /app/web/profiles/contrib/localgov* /app/web/modules/contrib/localgov*  /app/web/themes/contrib/localgov*"'
   drush:
