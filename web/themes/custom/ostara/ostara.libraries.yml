@@ -1,0 +1,25 @@
+variables:
+  css:
+    base:
+      # This is called in your ostara.info.yml file via `libraries-extend`.
+      # This ensures that in the cascade, your variables come after the base theme's
+      # variables.
+      css/variables.css: {}
+
+# To override CSS from the base theme, add your library here, and then use
+# `libraries-extend` to add that code to the library from the base theme. See the
+# ostara.info.yml file for an example, using this `sample-library`.
+
+# sample-library
+#   css:
+#     theme:
+#       css/overrides.css: {}
+
+# If your CSS is for a new component, and is not going to override existing CSS, you
+# can add that to your component in the usual ways - via `{{ attach_library }}` or a
+# preprocess hook, or similar approach.
+
+# sample-library-2
+#   css:
+#     theme:
+#       css/sample.css: {}

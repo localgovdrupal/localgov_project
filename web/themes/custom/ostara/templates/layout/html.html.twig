@@ -1,0 +1,17 @@
+{% extends "@localgov_base/layout/html.html.twig" %}
+
+{#
+  This block is available for you to edit the custom colours needed within
+  some favicon items.
+
+  You can also use it to add things like external fonts, which will load faster
+  than using @import in a CSS file.
+
+  For more info, see the html.html.twig file in the localgov_base directory.
+#}
+
+{% block extra_head_items %}
+  <link rel="mask-icon" href="/{{ base_path ~ directory }}/assets/images/favicons/safari-pinned-tab.svg" color="#ffffff">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+{% endblock %}

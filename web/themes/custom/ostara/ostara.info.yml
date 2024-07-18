@@ -1,0 +1,40 @@
+name: "ostara"
+description: "Your sub-theme, which uses localgov_base as its base theme."
+type: theme
+core_version_requirement: ^10 || ^11
+base theme: "localgov_base"
+
+libraries-extend:
+  # Add libraries that you want to load on every page of your site to the list
+  # of those extending localgov_base/global
+  localgov_base/global:
+    - ostara/variables
+    # - ostara/other-library-to-load-on-every-page
+    # - ostara/other-library-to-load-on-every-page
+  # Add libraries here that extend specific libraries.
+  # localgov_base/sample-library:
+    # - ostara/sample-library
+
+regions:
+  tabs: "Tabs"
+  header: "Header"
+  search: "Search"
+  mobile_search: "Mobile search"
+  primary_menu: "Primary menu"
+  secondary_menu: "Secondary menu"
+  banner: "Banner"
+  breadcrumb: "Breadcrumb"
+  messages: "Messages"
+  content_top: "Content top"
+  content: "Content"
+  content_bottom: "Content bottom"
+  sidebar_first: "Sidebar first"
+  sidebar_second: "Sidebar second"
+  footer_first: "Footer first"
+  footer_second: "Footer second"
+  footer_third: "Footer third"
+  footer: "Footer"
+  lower_footer_first: "Lower footer first"
+  lower_footer_second: "Lower footer second"
+  lower_footer_third: "Lower footer third"
+  disabled: "Disabled"
