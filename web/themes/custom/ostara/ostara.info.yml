@@ -12,8 +12,8 @@ libraries-extend:
     # - ostara/other-library-to-load-on-every-page
     # - ostara/other-library-to-load-on-every-page
   # Add libraries here that extend specific libraries.
-  # localgov_base/sample-library:
-    # - ostara/sample-library
+  localgov_base/sample-library:
+    - ostara/sample-library
 
 regions:
   tabs: "Tabs"
