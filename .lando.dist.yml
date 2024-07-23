@@ -23,10 +23,11 @@ services:
       environment:
         DRUSH_OPTIONS_ROOT: '/app/web'
         DRUSH_OPTIONS_URI: 'https://localgov.lndo.site'
+        SIMPLETEST_BASE_URL: 'http://localgov.lndo.site'
         SIMPLETEST_DB: 'mysql://database:database@database/database'
-        MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", { "chromeOptions": { "w3c": false } }, "http://chromedriver:4444/wd/hub"]'
+        MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName": "chrome", "goog:chromeOptions": {"args": ["--disable-gpu","--headless", "--no-sandbox", "--disable-dev-shm-usage"]}}, "http://chromedriver:9515"]'
         BROWSERTEST_OUTPUT_DIRECTORY: '/app/web/sites/simpletest/browser_output'
-        BROWSERTEST_OUTPUT_BASE_URL: 'https://localgov.lndo.site'
+        BROWSERTEST_OUTPUT_BASE_URL: 'http://localgov.lndo.site'
         # Support debugging CLI with Xdebug.
         PHP_IDE_CONFIG: "serverName=appserver"
         XDEBUG_SESSION: "lando"
@@ -57,16 +58,14 @@ services:
       - '3050:3050'
   chromedriver:
     type: compose
+    scanner: false
     services:
-      image: robcherry/docker-chromedriver:latest
-      environment:
-        CHROMEDRIVER_WHITELISTED_IPS: ""
-        CHROMEDRIVER_URL_BASE: "/wd/hub"
+      image: drupalci/webdriver-chromedriver:production
+      ports:
+        - "9515:9515"
       security_opt:
         - seccomp:unconfined
-      expose:
-        - '4444'
-      command: ["/usr/local/bin/supervisord", "-c", "/etc/supervisord.conf"]
+      command: chromedriver --verbose --allowed-ips= --allowed-origins=*
   solr-sitewide:
     type: solr:8
     core: sitewide
