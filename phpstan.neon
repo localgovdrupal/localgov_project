@@ -11,3 +11,7 @@ parameters:
     - '#Plugin manager has cache backend specified but does not declare cache tags.#'
     # new static() is a best practice in Drupal, so we cannot fix that.
     - '#^Unsafe usage of new static#'
+    # FIXME: ignore Drupal 12 deprecations
+    - '#Class Drupal\\localgov_forms\\Element\\AddressLookupElement extends deprecated class Drupal\\Core\\Render\\Element\\FormElement#'
+    - '#Call to deprecated method renderPlain\(\) of interface Drupal\\Core\\Render\\RendererInterface#'
+    - '#Call to deprecated method rebuildThemeData\(\) of interface Drupal\\Core\\Extension\\ThemeHandlerInterface#'
