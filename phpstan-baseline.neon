@@ -1,15 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: """
-				#^Call to deprecated method renderPlain\\(\\) of class Drupal\\\\Core\\\\Render\\\\Renderer\\:
-				in drupal\\:10\\.3\\.0 and is removed from drupal\\:12\\.0\\.0\\. Use
-				  \\\\Drupal\\\\Core\\\\Render\\\\RendererInterface\\:\\:renderInIsolation\\(\\) instead\\.$#
-			"""
-			count: 1
-			path: web/modules/contrib/localgov_alert_banner/src/Controller/AlertBannerEntityController.php
-
-		-
 			message: "#^Call to function array_search\\(\\) requires parameter \\#3 to be set\\.$#"
 			count: 1
 			path: web/modules/contrib/localgov_directories/localgov_directories.install
@@ -266,7 +257,7 @@ parameters:
 
 		-
 			message: "#^Method Drupal\\\\localgov_workflows_notifications\\\\Form\\\\LocalgovServiceContactForm\\:\\:validateForm\\(\\) should return Drupal\\\\Core\\\\Entity\\\\ContentEntityInterface but return statement is missing\\.$#"
-			count: 1
+			count: 2
 			path: web/modules/contrib/localgov_workflows/modules/localgov_workflows_notifications/src/Form/LocalgovServiceContactForm.php
 
 		-

@@ -32,5 +32,5 @@ parameters:
     - '#Dynamic call to static method PHPUnit\\Framework\\.*#'
     # FIXME: ignore Drupal 12 deprecations
     - '#Class Drupal\\localgov_forms\\Element\\AddressLookupElement extends deprecated class Drupal\\Core\\Render\\Element\\FormElement#'
-    - '#Call to deprecated method renderPlain\(\) of interface Drupal\\Core\\Render\\RendererInterface#'
-    - '#Call to deprecated method rebuildThemeData\(\) of interface Drupal\\Core\\Extension\\ThemeHandlerInterface#'
+    - '#Call to deprecated method renderPlain\(\)#'
+    - '#Call to deprecated method rebuildThemeData\(\)#'
