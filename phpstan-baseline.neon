@@ -1,0 +1,306 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to function array_search\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/localgov_directories.install
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/localgov_directories.module
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/modules/localgov_directories_db/tests/Kernel/InstallTest.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/modules/localgov_directories_location/localgov_directories_location.module
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/modules/localgov_directories_location/src/ProximitySearchSetup.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_directories/modules/localgov_directories_or/src/FacetMapping.php
+
+		-
+			message: "#^Call to function array_search\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/src/ConfigurationHelper.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/src/ConfigurationHelper.php
+
+		-
+			message: "#^Parameter \\#2 \\$callback of function array_reduce expects callable\\(array\\<string\\>, Drupal\\\\Core\\\\Entity\\\\EntityInterface\\)\\: array\\<string\\>, Closure\\(array, Drupal\\\\node\\\\NodeInterface\\)\\: array\\<string\\> given\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/src/Plugin/Block/ChannelSearchBlock.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 3
+			path: web/modules/contrib/localgov_directories/src/Plugin/facets/query_type/LocalGovDirectoriesQueryType.php
+
+		-
+			message: "#^Variable \\$bundle might not be defined\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/src/Plugin/facets/query_type/LocalGovDirectoriesQueryType.php
+
+		-
+			message: "#^Variable \\$query in empty\\(\\) always exists and is not falsy\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/src/Plugin/facets/query_type/LocalGovDirectoriesQueryType.php
+
+		-
+			message: "#^Method Drupal\\\\Tests\\\\BrowserTestBase\\:\\:drupalLogout\\(\\) invoked with 1 parameter, 0 required\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/tests/src/Functional/FacetsTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\Tests\\\\UnitTestCase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_directories/tests/src/Unit/FacetPreprocessTest.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_events/localgov_events.module
+
+		-
+			message: "#^Call to static method Drupal\\\\Component\\\\Utility\\\\Html\\:\\:escape\\(\\) with incorrect case\\: Escape$#"
+			count: 1
+			path: web/modules/contrib/localgov_geo/modules/localgov_geo_address/tests/Functional/AddressFormsTest.php
+
+		-
+			message: "#^Undefined variable\\: \\$new_config$#"
+			count: 1
+			path: web/modules/contrib/localgov_geo/modules/localgov_geo_update/src/MigrateDisplayModes.php
+
+		-
+			message: "#^Variable \\$new_base_array might not be defined\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_geo/modules/localgov_geo_update/src/MigrateDisplayModes.php
+
+		-
+			message: "#^Variable \\$new_config in empty\\(\\) is never defined\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_geo/modules/localgov_geo_update/src/MigrateDisplayModes.php
+
+		-
+			message: "#^Variable \\$url might not be defined\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_geo/modules/localgov_geo_update/tests/modules/localgov_geo_update_to_geo_test/src/Element/AutocompleteAddress.php
+
+		-
+			message: "#^Parameter \\#2 \\$callback of function uasort expects callable\\(Drupal\\\\Core\\\\Entity\\\\EntityInterface, Drupal\\\\Core\\\\Entity\\\\EntityInterface\\)\\: int, Closure\\(Drupal\\\\geocoder\\\\Entity\\\\GeocoderProvider, Drupal\\\\geocoder\\\\Entity\\\\GeocoderProvider\\)\\: \\(\\-1\\|0\\|1\\) given\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_geo/modules/localgov_geo_update/tests/modules/localgov_geo_update_to_geo_test/src/Plugin/Field/FieldWidget/AutocompleteAddress.php
+
+		-
+			message: "#^Variable \\$overview might not be defined\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_guides/src/Plugin/PreviewLinkAutopopulate/Guides.php
+
+		-
+			message: "#^Parameter \\#2 \\$callback of function array_walk expects callable\\(Drupal\\\\Core\\\\Entity\\\\EntityInterface, int\\|string\\)\\: mixed, array\\{Drupal\\\\localgov_menu_link_group\\\\MenuLinkGrouper, 'groupChildMenuLinks'\\} given\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_menu_link_group/localgov_menu_link_group.module
+
+		-
+			message: "#^Parameter \\#1 \\$group of method Drupal\\\\localgov_menu_link_group\\\\Controller\\\\LocalGovMenuLinkGroupListBuilder\\:\\:determineParentMenuLinkLabel\\(\\) expects Drupal\\\\localgov_menu_link_group\\\\Entity\\\\LocalGovMenuLinkGroupInterface, Drupal\\\\Core\\\\Entity\\\\EntityInterface given\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_menu_link_group/src/Controller/LocalGovMenuLinkGroupListBuilder.php
+
+		-
+			message: "#^Dynamic call to static method Drupal\\\\localgov_menu_link_group\\\\Form\\\\LocalGovMenuLinkGroupForm\\:\\:prepareMenuLinkOption\\(\\)\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_menu_link_group/src/Form/LocalGovMenuLinkGroupForm.php
+
+		-
+			message: "#^Class DOMXPath referenced with incorrect case\\: DomXPath\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_menu_link_group/tests/src/Kernel/GroupAccessTest.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_menu_link_group/tests/src/Kernel/GroupConfigImportTest.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_publications/localgov_publications.install
+
+		-
+			message: "#^Variable \\$themeInfo in empty\\(\\) always exists and is not falsy\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_publications/localgov_publications.install
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_publications/localgov_publications.module
+
+		-
+			message: "#^Access to an undefined property Drupal\\\\Tests\\\\localgov_publications\\\\Functional\\\\PublicationCoverPageTest\\:\\:\\$nodeStorage\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_publications/tests/src/Functional/PublicationCoverPageTest.php
+
+		-
+			message: "#^Access to an undefined property Drupal\\\\Tests\\\\localgov_publications\\\\Functional\\\\PublicationPageTest\\:\\:\\$nodeStorage\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_publications/tests/src/Functional/PublicationPageTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_search/modules/localgov_search_db/tests/Kernel/InstallTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_search/tests/src/Kernel/ContentTypesAddedToSearchTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_search_solr/tests/Kernel/InstallTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$items of method Drupal\\\\Core\\\\Field\\\\Plugin\\\\Field\\\\FieldFormatter\\\\EntityReferenceFormatterBase\\:\\:getEntitiesToView\\(\\) expects Drupal\\\\Core\\\\Field\\\\EntityReferenceFieldItemListInterface, Drupal\\\\Core\\\\Field\\\\FieldItemListInterface given\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_services/modules/localgov_services_landing/src/Plugin/Field/FieldFormatter/TaxonomyVerticalList.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_services/modules/localgov_services_navigation/src/EntityChildRelationshipUi.php
+
+		-
+			message: "#^Parameter \\#1 \\$node of method Drupal\\\\localgov_services_navigation\\\\EntityChildRelationshipUi\\:\\:childrenField\\(\\) expects Drupal\\\\node\\\\NodeInterface, Drupal\\\\Core\\\\Entity\\\\EntityInterface given\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_services/modules/localgov_services_navigation/src/EntityChildRelationshipUi.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_services/modules/localgov_services_navigation/tests/src/Kernel/ChildReferencesTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_services/modules/localgov_services_navigation/tests/src/Kernel/ChildReferencesTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_services/modules/localgov_services_navigation/tests/src/Kernel/ParentFieldPathautoTest.php
+
+		-
+			message: "#^Variable \\$overview might not be defined\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_step_by_step/src/Plugin/PreviewLinkAutopopulate/StepBySteps.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_subsites/localgov_subsites.module
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_subsites/src/Plugin/Block/SubsitesAbstractBlockBase.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_subsites/src/Plugin/Block/SubsitesNavigationBlock.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_subsites/src/Subsite.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_workflows/localgov_workflows.install
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 3
+			path: web/modules/contrib/localgov_workflows/localgov_workflows.module
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/modules/localgov_review_date/localgov_review_date.module
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/modules/localgov_review_date/tests/src/Kernel/ReviewDateEntityTest.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/modules/localgov_workflows_notifications/localgov_workflows_notifications.module
+
+		-
+			message: "#^Method Drupal\\\\localgov_workflows_notifications\\\\Form\\\\LocalgovServiceContactForm\\:\\:validateForm\\(\\) should return Drupal\\\\Core\\\\Entity\\\\ContentEntityInterface but return statement is missing\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_workflows/modules/localgov_workflows_notifications/src/Form/LocalgovServiceContactForm.php
+
+		-
+			message: "#^Variable \\$queue_item might not be defined\\.$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/modules/localgov_workflows_notifications/src/WorkflowNotification.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/modules/localgov_workflows_notifications/tests/src/Kernel/ReviewNotificationCronHookTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/modules/localgov_workflows_notifications/tests/src/Kernel/ReviewNotificationEmailTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/modules/localgov_workflows_notifications/tests/src/Kernel/WorkflowNotificationTest.php
+
+		-
+			message: "#^Parameter \\#1 \\$node of method Drupal\\\\Tests\\\\localgov_workflows\\\\Functional\\\\WorkflowsAccessTest\\:\\:updateState\\(\\) expects Drupal\\\\node\\\\Entity\\\\Node, Drupal\\\\node\\\\NodeInterface given\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_workflows/tests/src/Functional/WorkflowsAccessTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/tests/src/Kernel/WorkflowsEnableTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/tests/src/Kernel/WorkflowsInstallTest.php
+
+		-
+			message: "#^Call to method Drupal\\\\KernelTests\\\\KernelTestBase\\:\\:setUp\\(\\) with incorrect case\\: setup$#"
+			count: 1
+			path: web/modules/contrib/localgov_workflows/tests/src/Kernel/WorkflowsScheduledTransitionsTest.php
+
+		-
+			message: "#^Call to function in_array\\(\\) requires parameter \\#3 to be set\\.$#"
+			count: 2
+			path: web/profiles/contrib/localgov/localgov.install

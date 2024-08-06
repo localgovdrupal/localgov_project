@@ -11,7 +11,7 @@ on:
     branches:
       - '3.x'
   schedule:
-    - cron: "0 7 * * *"
+    - cron: '0 7 * * *'
   workflow_dispatch:
 
 env:
@@ -19,7 +19,6 @@ env:
   LOCALGOV_DRUPAL_PROJECT_PATH:
 
 jobs:
-
   build:
     name: Install LocalGov Drupal
     runs-on: ubuntu-latest
@@ -39,7 +38,6 @@ jobs:
           - '8.3'
 
     steps:
-
       - name: Save git branch and git repo names to env if this is not a pull request
         if: github.event_name != 'pull_request'
         run: |
@@ -98,12 +96,9 @@ jobs:
         drupal-version:
           - '~10.0'
         php-version:
-          - '8.1'
-          - '8.2'
           - '8.3'
 
     steps:
-
       - name: Cached workspace
         uses: actions/cache@v2
         with:
@@ -123,7 +118,7 @@ jobs:
           ./bin/phpcs -p ${LOCALGOV_DRUPAL_PROJECT_PATH}
 
   phpstan:
-    name: Deprecated code checks
+    name: Static analysis checks
     needs: build
     runs-on: ubuntu-latest
 
@@ -135,12 +130,9 @@ jobs:
         drupal-version:
           - '~10.0'
         php-version:
-          - '8.1'
-          - '8.2'
           - '8.3'
 
     steps:
-
       - name: Cached workspace
         uses: actions/cache@v2
         with:
@@ -154,7 +146,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-version }}
 
-      - name: Run deprecated code checks
+      - name: Run PHPStan code checks
         run: |
           cd html
           ./bin/phpstan analyse -c ./phpstan.neon ./web/modules/contrib/localgov* ./web/profiles/contrib/localgov* ./web/themes/contrib/localgov*
@@ -176,7 +168,6 @@ jobs:
           - '8.3'
 
     steps:
-
       - name: Clone Drupal container
         uses: actions/checkout@v2
         with:
