@@ -45,7 +45,8 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "extra": {
