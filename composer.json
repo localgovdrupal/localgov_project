@@ -15,7 +15,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-recommended": "^10.3",
-        "localgovdrupal/localgov": "dev-feature/740/enable-localgov_base-helper-module as 3.0.10",
+        "localgovdrupal/localgov": "dev-feature/740-test-fix-tests as 3.0.10",
         "localgovdrupal/localgov_base": "dev-1.x as 1.7.0",
         "localgovdrupal/localgov_search_solr": "^1.1"
     },
