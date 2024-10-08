@@ -1,8 +1,28 @@
+includes:
+  - phpstan-baseline.neon
+  - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+  - vendor/spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
+  - vendor/spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
+  - vendor/spaze/phpstan-disallowed-calls/disallowed-insecure-calls.neon
+
 parameters:
-  # we don't set a level so that we check deprecations only, and
-  # not to highlight unknown classes which are from composer suggestions
+  level: 1
   customRulesetUsed: true
   reportUnmatchedIgnoredErrors: false
+  checkFunctionArgumentTypes: true
+
+  drupal:
+    rules:
+      classExtendsInternalClassRule: false
+
+  strictRules:
+    allRules: false
+    strictCalls: true
+
+  # Exclude microsite project submodules from phpstan checks on the main project.
+  excludePaths:
+    - web/modules/contrib/localgov_alert_banner/modules/group_alert_banner/*
+
   # Ignore phpstan-drupal extension's rules.
   ignoreErrors:
     - '#\Drupal calls should be avoided in classes, use dependency injection instead#'
@@ -11,3 +31,9 @@ parameters:
     - '#Plugin manager has cache backend specified but does not declare cache tags.#'
     # new static() is a best practice in Drupal, so we cannot fix that.
     - '#^Unsafe usage of new static#'
+    # Disable PHPUnit dynamic call until core decision - https://www.drupal.org/project/drupal/issues/3029358
+    - '#Dynamic call to static method PHPUnit\\Framework\\.*#'
+    # FIXME: ignore Drupal 12 deprecations
+    - '#Class Drupal\\localgov_forms\\Element\\AddressLookupElement extends deprecated class Drupal\\Core\\Render\\Element\\FormElement#'
+    - '#Call to deprecated method renderPlain\(\)#'
+    - '#Call to deprecated method rebuildThemeData\(\)#'
