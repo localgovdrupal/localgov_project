@@ -71,11 +71,16 @@
             }
         },
         "patches-ignore": {
+            "localgovdrupal/localgov": {
+                "drupal/core": {
+                    "Content moderation and Workspaces https://www.drupal.org/project/drupal/issues/3179199#comment-15711680" : "https://www.drupal.org/files/issues/2024-08-11/3179199-3132022-content-moderation-workspaces-query.patch"
+                }
+            },
             "localgovdrupal/localgov_services": {
                 "drupal/core": {
                     "node_access filters out accessible nodes when node is left joined (1349080)" : "https://git.drupalcode.org/project/drupal/-/commit/c271adb.diff"
                 }
-            }    
+            }
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
