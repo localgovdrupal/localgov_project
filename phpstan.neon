@@ -27,6 +27,7 @@ parameters:
   ignoreErrors:
     - '#\Drupal calls should be avoided in classes, use dependency injection instead#'
     - '#Plugin definitions cannot be altered.#'
+    - identifier: missingType.iterableValue
     - '#Missing cache backend declaration for performance.#'
     - '#Plugin manager has cache backend specified but does not declare cache tags.#'
     # new static() is a best practice in Drupal, so we cannot fix that.
@@ -37,3 +38,7 @@ parameters:
     - '#Class Drupal\\localgov_forms\\Element\\AddressLookupElement extends deprecated class Drupal\\Core\\Render\\Element\\FormElement#'
     - '#Call to deprecated method renderPlain\(\)#'
     - '#Call to deprecated method rebuildThemeData\(\)#'
+
+rules:
+  - PHPStan\Rules\Functions\MissingFunctionReturnTypehintRule
+  - PHPStan\Rules\Methods\MissingMethodReturnTypehintRule
