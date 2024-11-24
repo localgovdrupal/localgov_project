@@ -1531,6 +1531,11 @@ parameters:
 			path: web/modules/contrib/localgov_guides/src/Plugin/Block/GuidesPrevNextBlock.php
 
 		-
+			message: "#^Variable \\$overview might not be defined\\.$#"
+			count: 2
+			path: web/modules/contrib/localgov_guides/src/Plugin/PreviewLinkAutopopulate/Guides.php
+
+		-
 			message: "#^Method Drupal\\\\Tests\\\\localgov_guides\\\\Functional\\\\ContentsBlockTest\\:\\:testContentListBlock\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: web/modules/contrib/localgov_guides/tests/src/Functional/ContentsBlockTest.php
