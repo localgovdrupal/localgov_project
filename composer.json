@@ -7,21 +7,29 @@
     "repositories": {
         "drupal": {
             "type": "composer",
-            "url": "https://packages.drupal.org/8"
+            "url": "https://packages.drupal.org/8",
+            "exclude": [
+                "drupal/geo_entity"
+            ]
+        },
+        "drupal/geo_entity": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/issue/geo_entity-3493603.git"
         }
     },
     "require": {
         "composer/installers": "^1.10",
         "cweagans/composer-patches": "^1.6",
-        "drupal/core-composer-scaffold": "^10.3",
-        "drupal/core-recommended": "^10.3",
+        "drupal/core-composer-scaffold": "^10.3 || ^11.0",
+        "drupal/core-recommended": "^10.3 || ^11.0",
+        "drupal/upgrade_status": "^4.3",
         "localgovdrupal/localgov": "^3.0",
         "localgovdrupal/localgov_search_solr": "^1.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.0",
         "drupal/coder": "^8.3",
-        "drupal/core-dev": "^10.3",
+        "drupal/core-dev": "^10.3 || ^11.0",
         "mglaman/phpstan-drupal": "^1.0",
         "phpspec/prophecy-phpunit": "^2",
         "phpstan/phpstan": "^1.0",
@@ -44,7 +52,8 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "tbachert/spi": true
         }
     },
     "extra": {
