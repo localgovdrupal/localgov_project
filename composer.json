@@ -84,6 +84,11 @@
                 "[web-root]/sites/development.services.yml": "assets/composer/development.services.yml"
             }
         },
+        "patches": {
+            "caxy/php-htmldiff": {
+                "Use explicit nullable type to fix error in PHP 8.4" : "https://patch-diff.githubusercontent.com/raw/millnut/php-htmldiff/pull/1.patch"
+            }
+        },
         "patches-ignore": {
             "localgovdrupal/localgov": {
                 "drupal/core": {
