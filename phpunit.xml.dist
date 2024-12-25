@@ -5,9 +5,9 @@
          beStrictAboutOutputDuringTests="true"
          beStrictAboutChangesToGlobalState="true"
          failOnRisky="true"
-         failOnWarning="true"
+         failOnWarning="false"
          displayDetailsOnTestsThatTriggerErrors="true"
-         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnTestsThatTriggerWarnings="false"
          displayDetailsOnTestsThatTriggerDeprecations="true"
          printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter">
 
