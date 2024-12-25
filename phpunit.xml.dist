@@ -9,6 +9,7 @@
          displayDetailsOnTestsThatTriggerErrors="true"
          displayDetailsOnTestsThatTriggerWarnings="false"
          displayDetailsOnTestsThatTriggerDeprecations="true"
+         cacheResult="false"
          printerClass="\Drupal\Tests\Listeners\HtmlOutputPrinter">
 
   <php>
