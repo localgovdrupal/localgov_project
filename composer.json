@@ -23,7 +23,7 @@
         }
     },
     "require": {
-        "composer/installers": "^1.10",
+        "composer/installers": "^1.10 || ^2.3",
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.3 || ^11.0",
         "drupal/core-recommended": "^10.3 || ^11.0",
