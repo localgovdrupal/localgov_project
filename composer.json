@@ -9,12 +9,17 @@
             "type": "composer",
             "url": "https://packages.drupal.org/8",
             "exclude": [
-                "drupal/geo_entity"
+                "drupal/geo_entity",
+                "drupal/fontawesome"
             ]
         },
         "drupal/geo_entity": {
             "type": "git",
             "url": "https://git.drupalcode.org/issue/geo_entity-3493603.git"
+        },
+        "drupal/fontawesome": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/issue/fontawesome-3465765.git"
         }
     },
     "require": {
