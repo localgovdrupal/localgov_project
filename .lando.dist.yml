@@ -117,7 +117,7 @@ tooling:
     cmd: /app/.lando/update-solr-config.sh
   install-frontend:
     service: node
-    cmd: cd /app/web/core && cp -f /app/web/core/.prettierrc.json /app/web/.prettierrc.json && npm i
+    cmd: cd /app/web/core && cp -f /app/web/core/.prettierrc.json /app/web/.prettierrc.json && cp -f /app/web/core/.prettierignore /app/.prettierignore && npm i
   eslint-js:
     service: node
     cmd: /app/web/core/node_modules/eslint/bin/eslint.js --ext .js --resolve-plugins-relative-to=./web/core
