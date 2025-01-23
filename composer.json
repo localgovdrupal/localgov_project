@@ -7,14 +7,7 @@
     "repositories": {
         "drupal": {
             "type": "composer",
-            "url": "https://packages.drupal.org/8",
-            "exclude": [
-                "drupal/fontawesome"
-            ]
-        },
-        "drupal/fontawesome": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/issue/fontawesome-3465765.git"
+            "url": "https://packages.drupal.org/8"
         }
     },
     "require": {
