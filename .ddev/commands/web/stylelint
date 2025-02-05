@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run the stylelint.
+## Usage: stylelint
+## Example: "ddev stylelint"
+
+/var/www/html/web/core/node_modules/.bin/stylelint --ignore-path /var/www/html/web/core/.stylelintignore --config /var/www/html/web/core/.stylelintrc.json $*

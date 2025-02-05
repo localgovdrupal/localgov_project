@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run the eslint on yaml files.
+## Usage: eslint-yaml
+## Example: "ddev eslint-yaml"
+
+/var/www/html/web/core/node_modules/eslint/bin/eslint.js --ext .yml --resolve-plugins-relative-to=./web/core $*
