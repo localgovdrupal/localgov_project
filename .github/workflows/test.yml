@@ -92,7 +92,11 @@ jobs:
         run: composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
 
       - name: Obtain all dev dependencies for LocalGov Drupal
-        run: jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
+        run: |
+          # We haven't aliased dev packages so this fails.
+          #jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
+          # Just install the ones we need for now.
+          composer --working-dir=./html require --dev --no-interaction drupal/geofield_map drupal/group
 
   phpcs:
     name: Coding standards checks
