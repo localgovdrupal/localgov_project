@@ -1,5 +1,5 @@
 name: localgov
-recipe: drupal10
+recipe: drupal11
 config:
   webroot: web
   php: '8.3'

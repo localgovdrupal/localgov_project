@@ -15,8 +15,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.3 || ^11.0",
         "drupal/core-recommended": "^10.3 || ^11.0",
-        "drupal/upgrade_status": "^4.3",
-        "localgovdrupal/localgov": "^3.0",
+        "localgovdrupal/localgov": "dev-feature/3.x/d11-support",
         "localgovdrupal/localgov_search_solr": "^1.1"
     },
     "require-dev": {
