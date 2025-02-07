@@ -28,14 +28,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version:
-          - '3.x'
-        drupal-version:
-          - '~10.0'
-        php-version:
-          - '8.1'
-          - '8.2'
-          - '8.3'
+        include:
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.1'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.2'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.4'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.4'
 
     steps:
       - name: Save git branch and git repo names to env if this is not a pull request
@@ -91,12 +102,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version:
-          - '3.x'
-        drupal-version:
-          - '~10.0'
-        php-version:
-          - '8.3'
+        include:
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.1'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.2'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.4'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.4'
 
     steps:
       - name: Cached workspace
@@ -125,12 +149,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version:
-          - '3.x'
-        drupal-version:
-          - '~10.0'
-        php-version:
-          - '8.3'
+        include:
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.1'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.2'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.4'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.4'
 
     steps:
       - name: Cached workspace
@@ -158,14 +195,25 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        localgov-version:
-          - '3.x'
-        drupal-version:
-          - '~10.0'
-        php-version:
-          - '8.1'
-          - '8.2'
-          - '8.3'
+        include:
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.1'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.2'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~10.0'
+            php-version: '8.4'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.3'
+          - localgov-version: '3.x'
+            drupal-version: '~11.0'
+            php-version: '8.4'
 
     steps:
       - name: Clone Drupal container
