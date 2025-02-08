@@ -16,7 +16,8 @@
         "drupal/core-composer-scaffold": "^10.3 || ^11.0",
         "drupal/core-recommended": "^10.3 || ^11.0",
         "localgovdrupal/localgov": "dev-feature/3.x/d11-support",
-        "localgovdrupal/localgov_search_solr": "^1.1"
+        "localgovdrupal/localgov_search_solr": "^1.1",
+        "mglaman/composer-drupal-lenient": "^1.0"
     },
     "require-dev": {
         "brianium/paratest": "^6.0 || ^7.3.1",
@@ -40,11 +41,12 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "mglaman/composer-drupal-lenient": true,
             "php-http/discovery": true,
+            "phpstan/extension-installer": true,
             "tbachert/spi": true
         }
     },
@@ -92,7 +94,11 @@
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "drupal-lenient": {
+            "allowed-list": [
+                "drupal/facets_form"
+            ]
         }
-
     }
 }
