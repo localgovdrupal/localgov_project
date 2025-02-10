@@ -91,7 +91,7 @@ jobs:
       - name: Create LocalGov Drupal project
         run: |
           composer create-project --stability dev localgovdrupal/localgov-project:${COMPOSER_REF} ./html
-          composer --working-dir=./html require --no-install drupal/core-recommended:${{ matrix.drupal-version }} drupal/core-composer-scaffold:${{ matrix.drupal-version }} drupal/core-project-message:${{ matrix.drupal-version }} drupal/core-dev:${{ matrix.drupal-version }}
+          composer require --working-dir=./html --no-install --with-all-dependencies drupal/core-recommended:${{ matrix.drupal-version }} drupal/core-composer-scaffold:${{ matrix.drupal-version }} drupal/core-project-message:${{ matrix.drupal-version }} drupal/core-dev:${{ matrix.drupal-version }}
           composer install --working-dir=./html
 
       - name: Obtain all dev dependencies for LocalGov Drupal
