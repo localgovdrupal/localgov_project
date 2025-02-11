@@ -112,7 +112,7 @@ jobs:
         localgov-version:
           - '3.x'
         drupal-version:
-          - '~10.0'
+          - '~11.0'
         php-version:
           - '8.4'
 
@@ -146,7 +146,7 @@ jobs:
         localgov-version:
           - '3.x'
         drupal-version:
-          - '~10.0'
+          - '~11.0'
         php-version:
           - '8.4'
 
@@ -168,6 +168,7 @@ jobs:
         run: |
           cd html
           ./bin/phpstan analyse -c ./phpstan.neon ./web/modules/contrib/localgov* ./web/profiles/contrib/localgov* ./web/themes/contrib/localgov*
+
   phpunit:
     name: PHPUnit tests
     needs: build
