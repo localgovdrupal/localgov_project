@@ -41,11 +41,12 @@
         "allow-plugins": {
             "composer/installers": true,
             "cweagans/composer-patches": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "phpstan/extension-installer": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
             "php-http/discovery": true,
+            "phpstan/extension-installer": true,
+            "tbachert/spi": false,
             "wikimedia/composer-merge-plugin": true
         }
     },
