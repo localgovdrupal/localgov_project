@@ -16,7 +16,8 @@
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-recommended": "^10.3",
         "localgovdrupal/localgov": "^3.0",
-        "localgovdrupal/localgov_search_solr": "^1.1"
+        "localgovdrupal/localgov_search_solr": "^1.1",
+        "wikimedia/composer-merge-plugin": "^2.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.0",
@@ -45,7 +46,8 @@
             "drupal/core-project-message": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
-            "tbachert/spi": false
+            "tbachert/spi": false,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "extra": {
@@ -92,7 +94,11 @@
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/dropzonejs/composer.libraries.json"
+            ]
         }
-
     }
 }
