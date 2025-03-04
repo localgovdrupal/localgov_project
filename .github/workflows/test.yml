@@ -167,6 +167,7 @@ jobs:
         run: |
           cd html
           ./bin/phpstan analyse -c ./phpstan.neon ./web/modules/contrib/localgov* ./web/profiles/contrib/localgov* ./web/themes/contrib/localgov*
+
   phpunit:
     name: PHPUnit tests
     needs: build
