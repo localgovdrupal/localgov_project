@@ -7,9 +7,11 @@ on:
   push:
     branches:
       - '3.x'
+      - '3.2.x'
   pull_request:
     branches:
       - '3.x'
+      - '3.2.x'
   schedule:
     - cron: '0 7 * * *'
   workflow_dispatch:
@@ -96,10 +98,7 @@ jobs:
 
       - name: Obtain all dev dependencies for LocalGov Drupal
         run: |
-          # We haven't aliased dev packages so this fails.
-          #jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
-          # Just install the ones we need for now.
-          composer --working-dir=./html require --dev --no-interaction drupal/geofield_map drupal/group drupal/facets_form
+          jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
 
   phpcs:
     name: Coding standards checks
@@ -112,7 +111,7 @@ jobs:
         localgov-version:
           - '3.x'
         drupal-version:
-          - '~10.0'
+          - '~11.0'
         php-version:
           - '8.4'
 
@@ -146,7 +145,7 @@ jobs:
         localgov-version:
           - '3.x'
         drupal-version:
-          - '~10.0'
+          - '~11.0'
         php-version:
           - '8.4'
 
