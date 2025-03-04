@@ -17,7 +17,7 @@
         "drupal/core-recommended": "^10.3 || ^11.0",
         "localgovdrupal/localgov": "dev-feature/3.x/d11-support",
         "localgovdrupal/localgov_search_solr": "^1.1",
-        "mglaman/composer-drupal-lenient": "^1.0"
+        "wikimedia/composer-merge-plugin": "^2.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.0 || ^7.3.1",
@@ -44,10 +44,10 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "drupal/core-composer-scaffold": true,
             "drupal/core-project-message": true,
-            "mglaman/composer-drupal-lenient": true,
             "php-http/discovery": true,
             "phpstan/extension-installer": true,
-            "tbachert/spi": true
+            "tbachert/spi": false,
+            "wikimedia/composer-merge-plugin": true
         }
     },
     "extra": {
@@ -79,11 +79,6 @@
                     "Content moderation and Workspaces https://www.drupal.org/project/drupal/issues/3179199#comment-15711680" : "https://www.drupal.org/files/issues/2024-08-11/3179199-3132022-content-moderation-workspaces-query.patch"
                 }
             },
-            "localgovdrupal/localgov_paragraphs": {
-                "drupal/tablefield": {
-                    "Row order identifiers localgov_paragraphs:#212 https://www.drupal.org/project/tablefield/issues/3441319" : "^3.0@beta"
-                }
-            },
             "localgovdrupal/localgov_services": {
                 "drupal/core": {
                     "node_access filters out accessible nodes when node is left joined (1349080)" : "https://git.drupalcode.org/project/drupal/-/commit/c271adb.diff"
@@ -99,6 +94,11 @@
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "merge-plugin": {
+            "include": [
+                "web/modules/contrib/dropzonejs/composer.libraries.json"
+            ]
         }
     }
 }
