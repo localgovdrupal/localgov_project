@@ -51,7 +51,7 @@ services:
       command: '/bin/s6-svscan /etc/services.d'
     portforward: true
   node:
-    type: 'node:18'
+    type: 'node:20'
     globals:
       gulp-cli: latest
     overrides:
