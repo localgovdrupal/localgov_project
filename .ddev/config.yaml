@@ -10,13 +10,13 @@ additional_hostnames: []
 additional_fqdns: []
 database:
   type: mariadb
-  version: "10.3"
+  version: "10.6"
 nfs_mount_enabled: false
 mutagen_enabled: false
 use_dns_when_possible: true
 composer_version: ""
 web_environment: []
-nodejs_version: "16"
+nodejs_version: "20"
 
 # Key features of ddev's config.yaml:
 

@@ -1,9 +1,9 @@
 name: localgov
-recipe: drupal10
+recipe: drupal11
 config:
   webroot: web
-  php: '8.1'
-  database: mariadb:10.6
+  php: '8.3'
+  database: mariadb:10.11
 proxy:
   mailhog:
     - mail.localgov.lndo.site
@@ -51,7 +51,7 @@ services:
       command: '/bin/s6-svscan /etc/services.d'
     portforward: true
   node:
-    type: 'node:18'
+    type: 'node:20'
     globals:
       gulp-cli: latest
     overrides:
