@@ -16,6 +16,9 @@
   <!-- Exclude profile version -->
   <exclude-pattern>web/profiles/contrib/localgov/localgov.info.yml</exclude-pattern>
 
+  <!-- Exclude localgov modules that are on drupal.org -->
+  <exclude-pattern>web/modules/contrib/localgov_utilities</exclude-pattern>
+
   <rule ref="./vendor/drupal/coder/coder_sniffer/Drupal"/>
   <rule ref="./vendor/drupal/coder/coder_sniffer/DrupalPractice"/>
 
