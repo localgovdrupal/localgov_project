@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-## Description: Run PHPSTAN to report on code deprecations.
-## Usage: phpix
-## Example: "ddev phix"
+## Description: Run phpstan to report on code deprecations.
+## Usage: phpstan
+## Example: "ddev phpstan analyse -c phpstan.neon web/modules/contrib/localgov_core"
 
 /var/www/html/vendor/bin/phpstan $*
