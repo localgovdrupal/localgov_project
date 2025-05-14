@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run the eslint on js files and automatically fix them.
+## Usage: eslint-js-fix
+## Example: "ddev eslint-js-fix"
+
+/var/www/html/web/core/node_modules/eslint/bin/eslint.js --ext .js --resolve-plugins-relative-to=./web/core --fix $*
