@@ -51,7 +51,7 @@ services:
       command: '/bin/s6-svscan /etc/services.d'
     portforward: true
   node:
-    type: 'node:18'
+    type: 'node:20'
     globals:
       gulp-cli: latest
     overrides:
@@ -115,3 +115,15 @@ tooling:
   update-solr-config:
     service: appserver
     cmd: /app/.lando/update-solr-config.sh
+  install-frontend:
+    service: node
+    cmd: cd /app/web/core && cp -f /app/web/core/.prettierrc.json /app/web/.prettierrc.json && cp -f /app/web/core/.prettierignore /app/.prettierignore && npm i
+  eslint-js:
+    service: node
+    cmd: /app/web/core/node_modules/eslint/bin/eslint.js --ext .js --resolve-plugins-relative-to=./web/core
+  eslint-yml:
+    service: node
+    cmd: /app/web/core/node_modules/eslint/bin/eslint.js --ext .yml --resolve-plugins-relative-to=./web/core
+  stylelint:
+    service: node
+    cmd: /app/web/core/node_modules/.bin/stylelint --ignore-path /app/web/core/.stylelintignore --config /app/web/core/.stylelintrc.json

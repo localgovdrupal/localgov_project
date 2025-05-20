@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run the eslint on js files.
+## Usage: eslint-js
+## Example: "ddev eslint-js"
+
+/var/www/html/web/core/node_modules/eslint/bin/eslint.js --ext .js --resolve-plugins-relative-to=./web/core $*
