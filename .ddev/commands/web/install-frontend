@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+## Description: Install needed node modules for Drupal frontend testing.
+## Usage: install-frontend
+## Example: "ddev install-frontend"
+
+cd /var/www/html/web/core
+cp -f /var/www/html/web/core/.prettierrc.json /var/www/html/web/.prettierrc.json
+cp -f /var/www/html/web/core/.prettierignore /var/www/html/web/.prettierignore
+npm i

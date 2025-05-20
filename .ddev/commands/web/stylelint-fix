@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+## Description: Run the stylelint and fix whatever CSS rules automatically.
+## Usage: stylelint-fix
+## Example: "ddev stylelint-fix"
+
+/var/www/html/web/core/node_modules/.bin/stylelint --ignore-path /var/www/html/web/core/.stylelintignore --config /var/www/html/web/core/.stylelintrc.json --fix $*
