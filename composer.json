@@ -15,7 +15,7 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-recommended": "^10.3",
-        "localgovdrupal/localgov": "^3.0",
+        "localgovdrupal/localgov": "dev-feature/688-drupal-org as 3.1.2",
         "localgovdrupal/localgov_search_solr": "^1.1",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
