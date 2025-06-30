@@ -14,7 +14,7 @@
         "composer/installers": "^1.10 || ^2.3",
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.3 || ^11.0",
-        "drupal/core-recommended": "^10.3 || ^11.0",
+        "drupal/core-recommended": "^10.3 || ~11.1.0",
         "localgovdrupal/localgov": "^3.0",
         "localgovdrupal/localgov_search_solr": "^1.1",
         "wikimedia/composer-merge-plugin": "^2.1"
