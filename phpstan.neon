@@ -19,6 +19,11 @@ parameters:
     allRules: false
     strictCalls: true
 
+  disallowedFunctionCalls:
+    -
+        function: 'xdebug_break()'
+        message: 'do not include in production code'
+
   # Exclude microsite project submodules from phpstan checks on the main project.
   excludePaths:
     - web/modules/contrib/localgov_alert_banner/modules/group_alert_banner/*
