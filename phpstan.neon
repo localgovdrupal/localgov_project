@@ -21,7 +21,7 @@ parameters:
 
   disallowedFunctionCalls:
     -
-        function: 'xdebug_break()'
+        function: 'xdebug_*()'
         message: 'do not include in production code'
 
   # Exclude microsite project submodules from phpstan checks on the main project.
