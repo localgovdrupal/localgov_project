@@ -20,4 +20,67 @@ variables:
   OPT_IN_TEST_PREVIOUS_MAJOR: 1
   OPT_IN_TEST_NEXT_MAJOR: 1
 
+phpcs:
+  stage: validate
+  rules:
+    - *skip-phpcs-rule
+    - if: $_PHPCS_ALLOW_FAILURE == "1" || ($_ALL_VALIDATE_ALLOW_FAILURE == "1" && $_PHPCS_ALLOW_FAILURE != "0")
+      <<: *php-files-exist
+      allow_failure: true
+    - if: $_PHPCS_ALLOW_FAILURE == "0" || $_ALL_VALIDATE_ALLOW_FAILURE == "0"
+      <<: *php-files-exist
+      allow_failure: false
+    - <<: *php-files-exist
+      when: on_success
+  needs: [composer]
+  script:
+    - cd $CI_PROJECT_DIR && pwd
+    # Does the project have its own phpcs config file?
+    - PHPCS_CONFIG_FILE=($(ls {.,}phpcs.xml{.dist,} 2>/dev/null | head -1 || true))
+    - |
+      if [[ ! "$PHPCS_CONFIG_FILE" ]]; then
+        echo 'This project has no (.)phpcs.xml(.dist), getting default from Gitlab Templates assets/phpcs.xml.dist'
+        source $CI_PROJECT_DIR/get-file-via-curl.sh assets/phpcs.xml.dist
+      else
+        echo "Using the project's existing $PHPCS_CONFIG_FILE config file"
+        # If the file has hard-coded paths to the Drupal and/or DrupalPractice ruleset give a message recommending they are changed.
+        LONG_PATHS=$(grep -inE "vendor\/drupal\/coder\/coder_sniffer\/Drupal(Practice)?\/ruleset.xml" $PHPCS_CONFIG_FILE) || true
+        if [[ $LONG_PATHS ]]; then
+          printf "$DIVIDER\nThe project's $PHPCS_CONFIG_FILE file contains the following long path(s)\n$LONG_PATHS\n \nWe recommend that this is changed to the short syntax\n"
+          # Use only newline, not spaces, to split the grep array for sed.
+          IFS=$'\n'
+          for line in $LONG_PATHS; do
+            echo $line | sed -E 's/rule.*vendor\/drupal\/coder\/coder_sniffer\/(Drupal|DrupalPractice)\/ruleset.xml.*/rule ref="\1"\/>/'
+          done
+          unset IFS
+          printf "\n $DIVIDER\n"
+        fi
+      fi
+      # Add --colors and --report-width=120 if those options are not already in _PHPCS_EXTRA. Use ,, for lower-case matching.
+      [[ ${_PHPCS_EXTRA,,} =~ (--colors|--no-colors) ]] || _PHPCS_EXTRA+=" --colors"
+      [[ ${_PHPCS_EXTRA,,} =~ (--report-width) ]] || _PHPCS_EXTRA+=" --report-width=120"
+    # Show the versions of the applicable elements.
+    - COLUMNS=120 composer show | grep -E '(codesniffer|coder|coding-standard|variable-analysis)'
+    # Show the phpcs version, config file, the paths, the installed coding standards and actual number of sniffs being used in this job.
+    - $CI_PROJECT_DIR/vendor/bin/phpcs --version
+    - $CI_PROJECT_DIR/vendor/bin/phpcs --config-show installed_paths
+    - $CI_PROJECT_DIR/vendor/bin/phpcs -i
+    - $CI_PROJECT_DIR/vendor/bin/phpcs -e | grep -E 'contains.*sniff' || true
+    - echo -e "\e[0Ksection_start:`date +%s`:phpcs_sniffs[collapsed=true]\r\e[0KList of all PHPCS sniffs used in this job"
+    - $CI_PROJECT_DIR/vendor/bin/phpcs -e || true
+    - echo -e "\e[0Ksection_end:`date +%s`:phpcs_sniffs\r\e[0K"
+    - echo "executing $CI_PROJECT_DIR/vendor/bin/phpcs ./web/modules/contrib/localgov*  -s --report-junit=junit.xml --report-full --report-summary --report-source --basepath=$DRUPAL_PROJECT_FOLDER $_PHPCS_EXTRA"
+    - $CI_PROJECT_DIR/vendor/bin/phpcs ./web/modules/contrib/localgov* -s --report-junit=junit.xml --report-full --report-summary --report-source --basepath=$DRUPAL_PROJECT_FOLDER $_PHPCS_EXTRA || EXIT_CODE=$?
+    - if [[ $EXIT_CODE == "" ]]; then echo "There are no PHPCS coding standards errors or warnings"; fi
+    - echo "Exiting with EXIT_CODE=$EXIT_CODE" && exit $EXIT_CODE
+  allow_failure: true
+  artifacts:
+    expose_as: junit
+    expire_in: 6 mos
+    when: always
+    name: artifacts-$CI_PIPELINE_ID-$CI_JOB_NAME_SLUG
+    paths:
+      - junit.xml
+    reports:
+      junit: junit.xml
 
