@@ -99,7 +99,9 @@ jobs:
       - name: Obtain all dev dependencies for LocalGov Drupal
         run: |
           composer --working-dir=./html require 'drupal/facets:^2.0'
-          jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
+          composer --working-dir=./html require 'drupal/entity' 'drupal/flexible_permissions' 'drupal/geofield_map' 'drupal/group'
+          #comment out below for testing
+          #jq --raw-output '.packages[] | select(.name | startswith("localgovdrupal/")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
 
   phpcs:
     name: Coding standards checks
