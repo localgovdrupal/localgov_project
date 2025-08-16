@@ -13,16 +13,22 @@
     "require": {
         "composer/installers": "^1.10 || ^2.3",
         "cweagans/composer-patches": "^1.6",
-        "drupal/core-composer-scaffold": "^10.3 || ^11.0",
-        "drupal/core-recommended": "^10.3 || ~11.1.0",
-        "localgovdrupal/localgov": "^3.0",
+        "drupal/core-composer-scaffold": "^11.0",
+        "drupal/core-recommended": "^11.0",
+        "enyo/dropzone": "^5.7",
+        "localgovdrupal/localgov": "dev-fix/3.2.x/fix-failing-test as 3.2.0-beta1",
+        "localgovdrupal/localgov_base": "2.1.2 as 1.9.2",
+        "localgovdrupal/localgov_core": "dev-fix/2.x/support-drupal-11-2 as 2.14.10",
+        "localgovdrupal/localgov_paragraphs": "dev-fix/2.x/drupal-11-2-support as 2.5.7",
         "localgovdrupal/localgov_search_solr": "^1.1",
+        "localgovdrupal/localgov_services": "dev-fix/2.x/support-drupal-11-2 as 2.1.19",
+        "localgovdrupal/localgov_topics": "dev-fix/1.x/34-container-rebuild as 1.0.2",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
     "require-dev": {
         "brianium/paratest": "^6.0 || ^7.3.1",
         "drupal/coder": "^8.3",
-        "drupal/core-dev": "^10.3 || ^11.0",
+        "drupal/core-dev": "^11.0",
         "mglaman/phpstan-drupal": "^1.0",
         "phpspec/prophecy-phpunit": "^2",
         "phpstan/phpstan": "^1.0",
@@ -73,10 +79,16 @@
                 "[web-root]/sites/development.services.yml": "assets/composer/development.services.yml"
             }
         },
+        "patches": {
+            "drupal/core": {
+                "Users can't reference unpublished content even when they have access to it. #2845144": "https://www.drupal.org/files/issues/2025-06-24/2845144-109.patch"
+            }
+        },
         "patches-ignore": {
             "localgovdrupal/localgov": {
                 "drupal/core": {
-                    "Content moderation and Workspaces https://www.drupal.org/project/drupal/issues/3179199#comment-15711680" : "https://www.drupal.org/files/issues/2024-08-11/3179199-3132022-content-moderation-workspaces-query.patch"
+                    "Content moderation and Workspaces https://www.drupal.org/project/drupal/issues/3179199#comment-15711680" : "https://www.drupal.org/files/issues/2024-08-11/3179199-3132022-content-moderation-workspaces-query.patch",
+                    "Users can't reference unpublished content even when they have access to it. See https://www.drupal.org/project/drupal/issues/2845144": "https://www.drupal.org/files/issues/2024-02-13/2845144-87.patch"
                 }
             },
             "localgovdrupal/localgov_services": {
