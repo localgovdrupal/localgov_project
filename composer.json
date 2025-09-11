@@ -16,13 +16,8 @@
         "drupal/core-composer-scaffold": "^11.0",
         "drupal/core-recommended": "^11.0",
         "enyo/dropzone": "^5.7",
-        "localgovdrupal/localgov": "dev-fix/3.2.x/fix-failing-test as 3.2.0-beta1",
-        "localgovdrupal/localgov_base": "2.1.2 as 1.9.2",
-        "localgovdrupal/localgov_core": "dev-testing/2.x/drupal-11-2 as 2.14.10",
-        "localgovdrupal/localgov_paragraphs": "dev-fix/2.x/drupal-11-2-support as 2.5.7",
+        "localgovdrupal/localgov": "dev-test/3.2.x/testing-drupal-11-2 as 3.2.0-beta1",
         "localgovdrupal/localgov_search_solr": "^1.1",
-        "localgovdrupal/localgov_services": "dev-fix/2.x/support-drupal-11-2 as 2.1.19",
-        "localgovdrupal/localgov_topics": "dev-fix/1.x/34-container-rebuild as 1.0.2",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
     "require-dev": {
