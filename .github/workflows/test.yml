@@ -29,18 +29,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.1'
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.2'
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.3'
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.4'
           - localgov-version: '4.x'
             drupal-version: '~11.0'
             php-version: '8.3'
@@ -90,7 +78,7 @@ jobs:
 
       - name: Create LocalGov Drupal project
         run: |
-          composer create-project --stability dev --no-install localgovdrupal/localgov-project:${COMPOSER_REF} ./html
+          composer create-project --stability dev --no-install localgovdrupal/localgov-project:${{ matrix.localgov-version }} ./html
           composer require --working-dir=./html --no-install --with-all-dependencies drupal/core-recommended:${{ matrix.drupal-version }} drupal/core-composer-scaffold:${{ matrix.drupal-version }} drupal/core-project-message:${{ matrix.drupal-version }} drupal/core-dev:${{ matrix.drupal-version }}
           composer install --working-dir=./html
 
@@ -176,18 +164,6 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.1'
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.2'
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.3'
-          - localgov-version: '3.x'
-            drupal-version: '~10.0'
-            php-version: '8.4'
           - localgov-version: '4.x'
             drupal-version: '~11.0'
             php-version: '8.3'
