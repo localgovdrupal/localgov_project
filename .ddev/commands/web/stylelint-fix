@@ -4,4 +4,4 @@
 ## Usage: stylelint-fix
 ## Example: "ddev stylelint-fix"
 
-/var/www/html/web/core/node_modules/.bin/stylelint --ignore-path /var/www/html/web/core/.stylelintignore --config /var/www/html/web/core/.stylelintrc.json --fix $*
+/var/www/html/web/core/node_modules/.bin/stylelint --ignore-path /var/www/html/web/core/.stylelintignore --config /var/www/html/web/core/.stylelintrc.json $* --fix
