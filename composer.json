@@ -63,7 +63,7 @@
                 "[web-root]/sites/default/settings.php": {
                     "mode": "replace",
                     "path": "assets/composer/settings.php",
-                    "overwrite": false
+                    "overwrite": true
                 },
                 "[web-root]/sites/default/settings.lando.php": {
                     "mode": "replace",

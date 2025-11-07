@@ -763,3 +763,10 @@ $ddev_settings = dirname(__FILE__) . '/settings.ddev.php';
 if (getenv('IS_DDEV_PROJECT') == 'true' && is_readable($ddev_settings)) {
   require $ddev_settings;
 }
+
+// Rewrite SCRIPT_NAME to account for subdirectory install.
+if(isset($GLOBALS['request'])) {
+  $scriptName = $GLOBALS['request']->server->get('SCRIPT_NAME');
+  $scriptName = preg_match('#^/subdir/#', $scriptName) ? : "/subdir$scriptName";
+  $GLOBALS['request']->server->set('SCRIPT_NAME', $scriptName);
+}
