@@ -65,11 +65,6 @@
                     "path": "assets/composer/settings.php",
                     "overwrite": false
                 },
-                "[web-root]/sites/default/settings.lando.php": {
-                    "mode": "replace",
-                    "path": "assets/composer/settings.lando.php",
-                    "overwrite": false
-                },
                 "[web-root]/sites/development.services.yml": "assets/composer/development.services.yml"
             }
         },
