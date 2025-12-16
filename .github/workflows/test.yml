@@ -82,9 +82,13 @@ jobs:
 
       - name: Obtain all dev dependencies for LocalGov Drupal
         run: |
+          # Installing all localgov dev dependencies doesn't work due to issues with drupal.org packaging.
+          # jq --raw-output '.packages[] | select(.name | startswith("drupal/localgov*")) | ."require-dev" | values | to_entries[] | @sh "\(.key):\(.value)"' ./html/composer.lock | sort | uniq | xargs composer --working-dir=./html require --dev --no-interaction
+          # Instead just install the dependencies needed for the tests.
           composer --working-dir=./html require 'drupal/facets:^2.0'
           composer --working-dir=./html require 'drupal/facets_form:^1.3'
           composer --working-dir=./html require 'drupal/group:^3.2'
+          
 
   phpcs:
     name: Coding standards checks
@@ -192,5 +196,4 @@ jobs:
         run: |
           mkdir -p ./html/web/sites/simpletest && chmod 777 ./html/web/sites/simpletest
           docker exec -t drupal bash -c 'chown docker:docker -R /var/www/html'
-          #docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4"
-          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/phpunit"
+          docker exec -u docker -t drupal bash -c "cd /var/www/html && ./bin/paratest --processes=4"
