@@ -83,6 +83,7 @@ jobs:
       - name: Obtain all dev dependencies for LocalGov Drupal
         run: |
           composer --working-dir=./html require 'drupal/facets:^2.0'
+          composer --working-dir=./html require 'drupal/facets_form:^1.3'
           composer --working-dir=./html require 'drupal/group:^3.2'
 
   phpcs:
