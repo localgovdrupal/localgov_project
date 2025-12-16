@@ -15,8 +15,8 @@
         "cweagans/composer-patches": "^1.6",
         "drupal/core-composer-scaffold": "^10.3",
         "drupal/core-recommended": "^10.3",
-        "localgovdrupal/localgov": "^3.0",
-        "localgovdrupal/localgov_search_solr": "^1.1",
+        "drupal/localgov": "^3.0",
+        "drupal/localgov_search_solr": "^1.1",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
     "require-dev": {
@@ -74,12 +74,12 @@
             }
         },
         "patches-ignore": {
-            "localgovdrupal/localgov": {
+            "drupal/localgov": {
                 "drupal/core": {
                     "Content moderation and Workspaces https://www.drupal.org/project/drupal/issues/3179199#comment-15711680" : "https://www.drupal.org/files/issues/2024-08-11/3179199-3132022-content-moderation-workspaces-query.patch"
                 }
             },
-            "localgovdrupal/localgov_services": {
+            "drupal/localgov_services": {
                 "drupal/core": {
                     "node_access filters out accessible nodes when node is left joined (1349080)" : "https://git.drupalcode.org/project/drupal/-/commit/c271adb.diff"
                 }
