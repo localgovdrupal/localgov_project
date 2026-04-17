@@ -1,3 +1,9 @@
+# ARCHIVED: Moved to Drupal.org
+
+This github project is no longer maintained, please use the drupal.org version. 
+
+[https://www.drupal.org/project/localgov_project](https://www.drupal.org/project/localgov_project)
+
 # LocalGov Drupal Composer project template
 
 ![Tests](https://github.com/localgovdrupal/localgov_project/actions/workflows/test.yml/badge.svg)
