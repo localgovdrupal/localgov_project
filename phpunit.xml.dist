@@ -22,6 +22,8 @@
      external DDev URL so you can follow the links directly.
     -->
     <env name="BROWSERTEST_OUTPUT_BASE_URL" value=""/>
+    <!-- Disable the deprecations helper for more readable test output. -->
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value="disabled"/>
   </php>
 
   <testsuites>
